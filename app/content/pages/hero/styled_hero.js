@@ -81,7 +81,7 @@ export const FDimage = styled(Image)`
     margin: 1.5rem 0;
   }
 `
-export const ReservetableButton = styled.a`
+export const ReservetableButton = styled.button`
   width: fit-content;
   color: var(--darkorange);
   font-size: 1.1rem;
