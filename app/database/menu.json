@@ -1,0 +1,567 @@
+{
+  "menu": [
+    {
+      "category": "Drinks",
+      "items": [
+        {
+          "name": "Dalgona Iced",
+          "href": "#About-section",
+          "imageUrl": "Dalgona.jpg",
+          "title": "DalgonaIced",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/DalgonaIced",
+          "background": "linear-gradient(135deg,rgba(209, 80, 4, 1) 0%,rgba(107, 50, 1, 1) 100%)",
+          "list": [
+            {
+              "name": "Dalgona Choco Silverqueen",
+              "image": "Dalg_ChocSilv.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaChocoSilverqueen",
+              "stars": "4.6",
+              "reviews": "2.6k",
+              "description": "Dalgona drink with chocolate SilverQueen flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Capuccino",
+              "image": "Dalg_Capu.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaCapuccino",
+              "stars": "4.5",
+              "reviews": "2.5k",
+              "description": "Dalgona drink with capuccino  flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Green Tea",
+              "image": "Dalg_Greentea.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaGreenTea",
+              "stars": "4.5",
+              "reviews": "2.4k",
+              "description": "Dalgona drink with Green tea flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Original Thai Tea",
+              "image": "Dalg_Orithaitea.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaOriginalThaiTea",
+              "stars": "4.0",
+              "reviews": "1.9k",
+              "description": "Dalgona drink with Original thai tea flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Choco Milo",
+              "image": "Dalg_ChocMilo.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaChocoMilo",
+              "stars": "4.2",
+              "reviews": "2k",
+              "description": "Dalgona drink with Chocolate milo flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Moccaccino",
+              "image": "Dalg_Moca.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaMoccaccino",
+              "stars": "4.1",
+              "reviews": "1.8k",
+              "description": "Dalgona drink with Moccaccino flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Red Velvet",
+              "image": "Dalg_RedV.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaRedVelvet",
+              "stars": "4.4",
+              "reviews": "2.2k",
+              "description": "Dalgona drink with Red velvet flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Taro",
+              "image": "Dalg_Taro.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaTaro",
+              "stars": "4.3",
+              "reviews": "2.1k",
+              "description": "Dalgona drink with Taro flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Nescafe Classic",
+              "image": "Dalg_Nescafe.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaNescafeClassic",
+              "stars": "4.1",
+              "reviews": "1.9k",
+              "description": "Dalgona drink with Nescafe coffee flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            },
+            {
+              "name": "Dalgona Tiramisu",
+              "image": "Dalg_Tira.jpg",
+              "link": "/content/pages/menu/productcategory/DalgonaIced/DalgonaTiramisu",
+              "stars": "4.2",
+              "reviews": "2k",
+              "description": "Dalgona drink with Tiramisu flavor mixed with brown sugar and boba pearl",
+              "calories": "380 calories, 19g sugar, 34g fat"
+            }
+          ]
+        },
+        {
+          "name": "Regular Iced",
+          "href": "#OrderOnline",
+          "imageUrl": "Regular_iced.jpeg",
+          "title": "Regular Iced",
+          "width": "236px",
+          "link": "/content/pages/menu/productcategory/RegularIced",
+          "background": "linear-gradient(135deg,rgba(120, 76, 24, 0.9) 0%,rgba(78, 42, 1, 0.9) 100%)",
+          "list": [
+            {
+              "name": "Choco Silverqueen Iced",
+              "image": "ReguIced_ChocSilv.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/ChocoSilverqueenIced",
+              "stars": "4.5",
+              "reviews": "2.5k",
+              "description": "Regular iced drink with chocolate SilverQueen flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Capuccino Iced",
+              "image": "ReguIced_Capu.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/CapuccinoIced",
+              "stars": "4.4",
+              "reviews": "2.6k",
+              "description": "Regular iced drink with capuccino flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Green Tea Iced",
+              "image": "ReguIced_Greentea.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/GreenTeaIced",
+              "stars": "4.4",
+              "reviews": "2.1k",
+              "description": "Regular iced drink with green tea flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Original Thai Tea Iced",
+              "image": "ReguIced_Orithaitea.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/OriginalThaiTeaIced",
+              "stars": "4.3",
+              "reviews": "2k",
+              "description": "Regular iced drink with original thai tea flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Choco Milo Iced",
+              "image": "ReguIced_ChocMilo.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/ChocoMiloIced",
+              "stars": "4.2",
+              "reviews": "2.2k",
+              "description": "Regular iced drink with chocolate milo flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Moccaccino Iced",
+              "image": "ReguIced_Moca.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/MoccaccinoIced",
+              "stars": "4.1",
+              "reviews": "2k",
+              "description": "Regular iced drink with moccaccino flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Red Velvet Iced",
+              "image": "ReguIced_RedV.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/RedVelvetIced",
+              "stars": "4.3",
+              "reviews": "2.3k",
+              "description": "Regular iced drink with red velvet flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Taro Iced",
+              "image": "ReguIced_Taro.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/TaroIced",
+              "stars": "4.3",
+              "reviews": "1.9k",
+              "description": "Regular iced drink with taro flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Nescafe Classic Iced",
+              "image": "ReguIced_Nescafe.jpeg",
+              "link": "/content/pages/menu/productcategory/RegularIced/NescafeClassicIced",
+              "stars": "4.2",
+              "reviews": "1.8k",
+              "description": "Regular iced drink with nescafe classic flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Tiramisu Iced",
+              "image": "ReguIced_Tira.jpg",
+              "link": "/content/pages/menu/productcategory/RegularIced/TiramisuIced",
+              "stars": "4.2",
+              "reviews": "1.7k",
+              "description": "Regular iced drink with tiramisu flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            }
+          ]
+        },
+        {
+          "name": "Regular Hot",
+          "href": "...",
+          "imageUrl": "Regular_hot.jpeg",
+          "title": "Regular Hot",
+          "width": "231px",
+          "link": "/content/pages/menu/productcategory/RegularHot",
+          "background": "linear-gradient(135deg,rgba(137, 50, 22, 0.9) 0%,rgba(90, 22, 0.9, 1) 100%)",
+          "list": [
+            {
+              "name": "Hot Choco Silverqueen",
+              "image": "ReguHot_ChocSilv.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotChocoSilverqueen",
+              "stars": "4.1",
+              "reviews": "1.1k",
+              "description": "Regular hot drink with chocolate SilverQueen flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Capuccino",
+              "image": "ReguHot_Capu.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotCapuccino",
+              "stars": "4.0",
+              "reviews": "1k",
+              "description": "Regular hot drink with capuccino flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Green Tea",
+              "image": "ReguHot_Greentea.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotGreenTea",
+              "stars": "4.1",
+              "reviews": "1.2k",
+              "description": "Regular hot drink with green tea flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Original Thai Tea",
+              "image": "ReguHot_Orithaitea.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotOriginalThaiTea",
+              "stars": "4.2",
+              "reviews": "1.1k",
+              "description": "Regular hot drink with original thai tea flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Choco Milo",
+              "image": "ReguHot_ChocMilo.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotChocoMilo",
+              "stars": "4.0",
+              "reviews": "1k",
+              "description": "Regular hot drink with chocolate milo flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Moccaccino",
+              "image": "ReguHot_Moca.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotMoccaccino",
+              "stars": "4.1",
+              "reviews": "0.9k",
+              "description": "Regular hot drink with moccaccino flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Red Velvet",
+              "image": "ReguHot_RedV.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotRedVelvet",
+              "stars": "4.0",
+              "reviews": "0.95k",
+              "description": "Regular hot drink with red velvet flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Taro",
+              "image": "ReguHot_Taro.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotTaro",
+              "stars": "4.1",
+              "reviews": "1.1k",
+              "description": "Regular hot drink with taro flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Nescafe Classic",
+              "image": "ReguHot_Nescafe.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotNescafeClassic",
+              "stars": "4.1",
+              "reviews": "1.2k",
+              "description": "Regular hot drink with nescafe classic flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "Hot Tiramisu",
+              "image": "ReguHot_Tira.jpg",
+              "link": "/content/pages/menu/productcategory/RegularHot/HotTiramisu",
+              "stars": "4.0",
+              "reviews": "1k",
+              "description": "Regular hot drink with tiramisu flavor mixed with milk, brown sugar and boba pearl",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Food",
+      "items": [
+        {
+          "name": "Mie Nyemek",
+          "href": "...",
+          "imageUrl": "mie_nyemek.jpg",
+          "title": "Mie Nyemek",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/MieNyemek",
+          "background": "linear-gradient(135deg,rgba(153, 147, 0, 0.9) 0%,rgba(95, 103, 0, 1) 100%)",
+          "list": [
+            {
+              "name": "Mie Nyemek Original",
+              "image": "mienyemek_ori.jpg",
+              "link": "/content/pages/menu/productcategory/MieNyemek/MieNyemekOriginal",
+              "stars": "4.3",
+              "reviews": "2k",
+              "description": "Indonesian tasty noodles mixed with vegetables and chicken egg",
+              "calories": "410 calories, 10g sugar, 22g fat"
+            },
+            {
+              "name": "Mie Nyemek Bakso Sapi Sosis",
+              "image": "mienyemek_baksosapi.jpg",
+              "link": "/content/pages/menu/productcategory/MieNyemek/MieNyemekBaksoSapiSosis",
+              "stars": "4.4",
+              "reviews": "2.1k",
+              "description": "Indonesian tasty noodles mixed with vegetables, chicken egg, beef meatball and sausage",
+              "calories": "440 calories, 10g sugar, 22g fat"
+            },
+            {
+              "name": "Mie Nyemek Bakso Seafood",
+              "image": "mienyemek_baksoseafood.jpg",
+              "link": "/content/pages/menu/productcategory/MieNyemek/MieNyemekBaksoSeafood",
+              "stars": "4.5",
+              "reviews": "2.2k",
+              "description": "Indonesian tasty noodles mixed with vegetables, chicken egg, seafood meatballs.",
+              "calories": "440 calories, 10g sugar, 22g fat"
+            }
+          ]
+        },
+        {
+          "name": "Croffle",
+          "href": "...",
+          "imageUrl": "FD_Croffle.jpg",
+          "title": "Croffle Original",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/Croffle",
+          "background": "linear-gradient(135deg,rgba(87, 87, 87, 0.9) 0%,rgba(31, 32, 31, 1) 100%)",
+          "list": [
+            {
+              "name": "Croffle Original",
+              "image": "CroffleOriginal.jpg",
+              "link": "/content/pages/menu/productcategory/Croffle/CroffleOriginal",
+              "stars": "4.4",
+              "reviews": "1.1k",
+              "description": "A delightful fusion of croissants and waffles, created by cooking croissant dough in a waffle iron. The result combines the flaky, buttery layers of a croissant with the grid-like pattern of a waffle",
+              "calories": "190 calories, 15g sugar, 17g fat"
+            }
+          ]
+        },
+        {
+          "name": "Sate Bakso",
+          "href": "...",
+          "imageUrl": "FD_SateBaksoSeafood.jpg",
+          "title": "Sate Bakso Seafood",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/SateBakso",
+          "background": "linear-gradient(135deg,rgba(1, 111, 18, 0.9) 0%,rgba(0, 54, 5, 1) 100%)",
+          "list": [
+            {
+              "name": "Sate Bakso Seafood",
+              "image": "SateBaksoSeafood.jpg",
+              "link": "/content/pages/menu/productcategory/SateBakso/SateBaksoSeafood",
+              "stars": "4.0",
+              "reviews": "0.6k",
+              "description": "A tantalizing dish featuring grilled seafood meatballs infused with aromatic spices. Skewered to perfection, these tender morsels are complemented by a flavorful sauces",
+              "calories": "330 calories, 5g sugar, 27g fat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "category": "Combo",
+      "items": [
+        {
+          "name": "Simple DalCro",
+          "href": "...",
+          "imageUrl": "DalCro.jpg",
+          "title": "Simple DalCro",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/SimpleDalCro",
+          "background": "linear-gradient(135deg,rgba(152, 30, 110, 0.9) 0%,rgba(71, 1, 68, 1) 100%)",
+          "list": [
+            {
+              "name": "DalCro Choco Silverqueen",
+              "image": "DalCro_ChocSilv.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroChocoSilverqueen",
+              "stars": "4.2",
+              "reviews": "0.7k",
+              "description": "1 cup Dalgona chocolate silverqueen flavor +  1 dough Croffle original",
+              "calories": "440 calories, 28g sugar, 34g fat"
+            },
+            {
+              "name": "DalCro Capuccino",
+              "image": "DalCro_Capu.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroCapuccino",
+              "stars": "4.3",
+              "reviews": "0.85k",
+              "description": "1 cup Dalgona Capuccino flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Green Tea",
+              "image": "DalCro_Greentea.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroGreenTea",
+              "stars": "4.1",
+              "reviews": "0.55k",
+              "description": "1 cup Dalgona chocolate silverqueen flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Original Thai Tea",
+              "image": "DalCro_Orithaitea.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroOriginalThaiTea",
+              "stars": "4.2",
+              "reviews": "0.8k",
+              "description": "1 cup Dalgona Green Tea flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Choco Milo",
+              "image": "DalCro_ChocMilo.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroChocoMilo",
+              "stars": "4.0",
+              "reviews": "0.65k",
+              "description": "1 cup Dalgona Chocolate Milo flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Moccaccino",
+              "image": "DalCro_Mocca.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroMoccaccino",
+              "stars": "4.1",
+              "reviews": "0.75k",
+              "description": "1 cup Dalgona Moccaccino flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Red Velvet",
+              "image": "DalCro_RedV.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroRedVelvet",
+              "stars": "4.3",
+              "reviews": "1k",
+              "description": "1 cup Dalgona Red Velvet flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Taro",
+              "image": "DalCro_Taro.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroTaro",
+              "stars": "4.2",
+              "reviews": "0.9k",
+              "description": "1 cup Dalgona Taro flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Nescafe Classic",
+              "image": "DalCro_Nescafe.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroNescafeClassic",
+              "stars": "4.0",
+              "reviews": "0.96k",
+              "description": "1 cup Dalgona Nescafe Classic flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            },
+            {
+              "name": "DalCro Tiramisu",
+              "image": "DalCro_Tira.jpg",
+              "link": "/content/pages/menu/productcategory/SimpleDalCro/DalCroTiramisu",
+              "stars": "4.1",
+              "reviews": "0.7k",
+              "description": "1 cup Dalgona Tiramisu flavor +  1 dough Croffle original",
+              "calories": "340 calories, 18g sugar, 31g fat"
+            }
+          ]
+        },
+        {
+          "name": "Combo 123",
+          "href": "...",
+          "imageUrl": "Combo123.jpg",
+          "title": "Combo 123",
+          "width": "235px",
+          "link": "/content/pages/menu/productcategory/Combo123",
+          "background": "linear-gradient(135deg,rgba(30, 145, 152, 0.9) 0%,rgba(1, 59, 71, 1) 100%)",
+          "list": [
+            {
+              "name": "Combo Solo 1",
+              "image": "ComboSolo1.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboSolo1",
+              "stars": "4.2",
+              "reviews": "0.6k",
+              "description": "1 cup Dalgona +  2 dough Croffle original + 1 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred Dalgona drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            },
+            {
+              "name": "Combo Solo 2",
+              "image": "ComboSolo2.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboSolo2",
+              "stars": "4.0",
+              "reviews": "0.86k",
+              "description": "1 cup Regular iced +  2 dough Croffle original + 1 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred regular iced drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            },
+            {
+              "name": "Combo Duo 1",
+              "image": "ComboDuo1.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboDuo1",
+              "stars": "4.1",
+              "reviews": "0.82k",
+              "description": "2 cup Dalgona +  3 dough Croffle original + 1 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred Dalgona drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            },
+            {
+              "name": "Combo Duo 2",
+              "image": "ComboDuo2.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboDuo2",
+              "stars": "4.0",
+              "reviews": "0.78k",
+              "description": "2 cup Regular iced +  3 dough Croffle original + 1 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred regular iced drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            },
+            {
+              "name": "Combo Trio 1",
+              "image": "ComboTrio1.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboTrio1",
+              "stars": "4.2",
+              "reviews": "0.96k",
+              "description": "3 cup Dalgona +  5 dough Croffle original + 2 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred Dalgona drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            },
+            {
+              "name": "Combo Trio 2",
+              "image": "ComboTrio2.jpg",
+              "link": "/content/pages/menu/productcategory/Combo123/ComboTrio2",
+              "stars": "4.0",
+              "reviews": "0.58k",
+              "description": "3 cup Regular iced +  5 dough Croffle original + 2 dalgona dipping sauce (When placing an order, please include a note in the information column specifying your preferred regular iced drink and dipping sauce flavor)",
+              "calories": "520 calories, 34g sugar, 39g fat"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
