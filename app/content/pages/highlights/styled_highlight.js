@@ -51,11 +51,14 @@ export const OrderButton = styled.a`
     border: 2px inset var(--darkorange);
   }
 `;
-
+export const MenuWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
 export const SpecialMenu = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
   min-height: 100vh;
   justify-content: space-around;
   align-items: flex-start;
@@ -72,7 +75,7 @@ export const SpecialMenu = styled.div`
   @media (max-width: 991px) {
     justify-content: flex-start;
     gap: 2rem;
-    margin: auto 2rem 4rem;
+    margin: 2rem 2rem 1.5rem;
   }
   @media (max-width: 640px) {
     flex-direction: column;
@@ -96,14 +99,9 @@ export const SpecialItem = styled.div`
 `;
 
 export const LeftChevron = styled.div`
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
-  position: absolute;
-  top: 50%;
-  right: auto;
-  left: 1rem;
-  z-index: 5;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -116,11 +114,15 @@ export const LeftChevron = styled.div`
     transform: scale(1.2);
     transition: transform 0.3s ease;
   }
+  @media (max-width: 991px) {
+    display: flex;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
 `;
 
 export const RightChevron = styled(LeftChevron)`
-  right: 1rem;
-  left: auto;
 `;
 
 export const StyledImage = styled(Image)`

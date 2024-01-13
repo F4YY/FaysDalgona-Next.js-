@@ -17,7 +17,7 @@ export const StyledNavbar = styled(HStack)`
   background-color: var(--lightorange);
   padding: 0.5rem 1.2rem;
   border-bottom: .3rem groove rgb(255, 129, 0.5);
-  z-index:5;
+  z-index:1;
 `
 export const StyledImage = styled(Image)`
   display: flex;
@@ -128,7 +128,7 @@ export const WrappedMobileMenu = styled.div`
     top: 0;
     left: 0;
     width: 94%;
-    min-height: 150vh;
+    min-height: 200vh;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
@@ -149,19 +149,18 @@ export const Overlayscreen = styled.div`
     top:0;
     left:0;
     width:100%;
+    min-height:200vh;
     animation: overlayslide .3s ease-out;
     animation-direction: alternate;
     animation-iteration-count: 1;
-    min-height:100vh;
     opacity:.7;
     background:var(--darkblue);
-    z-index:0;
 `
 export const SpoonForkButton = styled.div`
   position: absolute;
   font-size: 1.6rem;
   color: var(--darkorange);
-  z-index: 1;
+  z-index: 2;
   @media (max-width: 991px) {
     top: 1.4rem;
     right: 1.3rem;
@@ -177,12 +176,13 @@ export const AnimatedSpoonForkButton = styled(SpoonForkButton)`
   opacity: ${({ $toggleMenu }) => $toggleMenu ? 1 : 0};
 `;
 export const MobileMenuButton = styled.button`
-  width: 280px;
+  width: 260px;
+  font-size: 1rem;
   font-weight: var(--medium);
   color: var(--darkorange);
-  border: .13rem solid var(--darkorange);
+  border: .11rem solid var(--darkorange);
   border-radius: .5rem;
-  padding: .5rem 3rem;
+  padding: .4rem 2.7rem;
   margin: .2rem;
   border-left: ${props => props.$current ? '10px solid var(--darkorange)' : '.13rem solid var(--darkorange)'};
 `;

@@ -15,7 +15,7 @@ export const StyledFeatures = styled.div`
     padding: 6.5rem 2.5rem 2rem;
   }
   @media (max-width: 640px) {
-    padding: 5rem 1.5rem 2rem;
+    padding: 5rem 1rem 2rem;
   }
 `
 export const FDtext = styled.h1`

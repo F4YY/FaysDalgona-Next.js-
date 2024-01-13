@@ -27,8 +27,16 @@ import {
 
 const NavBar = () => {
   const NavBarRef = useRef(null);
-
-  const {user, login, logout, authReady } = useContext(AuthContext);
+  const {
+    user,
+    login,
+    logout,
+    authReady,
+    showLeftChevron,
+    showRightChevron,
+    setShowLeftChevron,
+    setShowRightChevron
+  } = useContext(AuthContext);
   console.log(user);
 
   useEffect(() => {
@@ -143,10 +151,16 @@ const NavBar = () => {
         </StyledUl>
       )}
       <AnimatedBurgerButton $toggleMenu={toggleMenu}>
-        <GiHamburgerMenu onClick={() => setToggleMenu(!toggleMenu)} />
+        <GiHamburgerMenu
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+          }} />
       </AnimatedBurgerButton>
       <AnimatedSpoonForkButton $toggleMenu={toggleMenu}>
-        <MdOutlineRestaurantMenu onClick={() => setToggleMenu(!toggleMenu)} />
+        <MdOutlineRestaurantMenu
+          onClick={() => {
+            setToggleMenu(!toggleMenu);
+          }} />
       </AnimatedSpoonForkButton>
       {toggleMenu ? (
         <>

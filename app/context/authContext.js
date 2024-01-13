@@ -34,6 +34,8 @@ export const AuthContextProvider = ({ children }) => {
   const [menuPic, setMenuPic] = useState('');
   const [menuCategory, setMenuCategory] = useState('');
   const [menuName, setMenuName] = useState('');
+  const [showLeftChevron, setShowLeftChevron] = useState(false);
+  const [showRightChevron, setShowRightChevron] = useState(true);
 
   useEffect(() => {
     netlifyIdentity.on('login', user => {
@@ -167,7 +169,11 @@ export const AuthContextProvider = ({ children }) => {
     menuName,
     setMenuName,
     handleRateMenu,
-    handleSubmit
+    handleSubmit,
+    showLeftChevron,
+    showRightChevron,
+    setShowLeftChevron,
+    setShowRightChevron
   }
 
   return (
