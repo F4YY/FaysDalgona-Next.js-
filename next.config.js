@@ -4,9 +4,10 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
-  images: {
-    disableStaticImages: true,
-  },
+}
+  // images: {
+  //   disableStaticImages: true,
+  // },
   // images: {
   //   domains: [],
   //   // Add the remote patterns for your images
@@ -23,23 +24,23 @@ const nextConfig = {
   //   ],
   //   minimumCacheTTL: 60,
   // },
-  webpack: (config) => {
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|svg)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            publicPath: '/_next/static/images',
-            outputPath: 'static/images',
-          },
-        },
-      ],
-    });
+//   webpack: (config) => {
+//     config.module.rules.push({
+//       test: /\.(png|jpe?g|gif|svg)$/i,
+//       use: [
+//         {
+//           loader: 'file-loader',
+//           options: {
+//             name: '[name].[ext]',
+//             publicPath: '/_next/static/images',
+//             outputPath: 'static/images',
+//           },
+//         },
+//       ],
+//     });
 
-    return config;
-  }
-}
+//     return config;
+//   }
+// }
 
 module.exports = nextConfig
