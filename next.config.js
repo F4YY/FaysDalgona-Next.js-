@@ -4,6 +4,9 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    disableStaticImages: true,
+  },
   // images: {
   //   domains: [],
   //   // Add the remote patterns for your images
