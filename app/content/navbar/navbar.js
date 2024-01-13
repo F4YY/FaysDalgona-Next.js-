@@ -32,10 +32,6 @@ const NavBar = () => {
     login,
     logout,
     authReady,
-    showLeftChevron,
-    showRightChevron,
-    setShowLeftChevron,
-    setShowRightChevron
   } = useContext(AuthContext);
   console.log(user);
 
