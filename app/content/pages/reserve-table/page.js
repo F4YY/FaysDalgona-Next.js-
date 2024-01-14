@@ -79,7 +79,7 @@ const ReserveTable = (onSubmit) => {
       alignItems="flex-start"
       display="flex"
       onSubmit={handleSubmit}
-      id="main-menu-container"
+      id="main-page"
       w="100%"
     >
       {!user? (

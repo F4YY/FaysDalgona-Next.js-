@@ -21,7 +21,7 @@ import AuthContext from '../../../context/authContext';
 export default function Menu() {
   const { scrollToTop } = React.useContext(AuthContext);
   return (
-    <Wrapper id='AllMenu-section'>
+    <Wrapper>
       <AuxiliaryNavigation>
         <AuxNavList>
           <Link href='/content/pages/menu'>
@@ -52,7 +52,7 @@ export default function Menu() {
           ))}
         </LeftMenu>
         <RightMenu>
-          <MenuHeader id="main-menu-container">
+          <MenuHeader id="main-page">
             Menu
           </MenuHeader>
           <MainMenu/>

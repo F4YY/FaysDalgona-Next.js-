@@ -134,9 +134,16 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const scrollToTop = () => {
-    const mainMenuContainer = document.getElementById("main-menu-container");
-    if (mainMenuContainer) {
-      mainMenuContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const mainPageContainer = document.getElementById("main-page");
+    if (mainPageContainer) {
+      mainPageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  const scrollToTopSubPage = () => {
+    const SubPageContainer = document.getElementById("sub-page");
+    if (SubPageContainer) {
+      SubPageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
@@ -146,6 +153,7 @@ export const AuthContextProvider = ({ children }) => {
     logout,
     authReady,
     scrollToTop,
+    scrollToTopSubPage,
     stars,
     setStars,
     currentRating,

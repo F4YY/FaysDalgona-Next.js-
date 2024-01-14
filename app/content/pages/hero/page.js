@@ -16,7 +16,7 @@ import Link from 'next/link';
 const HeroSection = () => {
   const { scrollToTop } = useContext(AuthContext);
   return (
-    <StyledHeroSection id="Home-section">
+    <StyledHeroSection id="main-page">
       <StyledFeatures>
         <FDtext>Fay's Dalgona</FDtext>
         <FDindo>Indonesia</FDindo>
