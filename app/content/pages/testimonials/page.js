@@ -52,7 +52,7 @@ const handleClick = (anchor) => {
 return (
   <Testipage>
     <h1
-      id="main-page"
+      id="Testimonials-page"
       ref={scrollRef}
     >
       Testimonials

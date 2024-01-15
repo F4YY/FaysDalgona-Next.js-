@@ -134,17 +134,20 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   const scrollToTop = () => {
-    const mainPageContainer = document.getElementById("main-page");
-    if (mainPageContainer) {
-      mainPageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }
-
-  const scrollToTopSubPage = () => {
-    const SubPageContainer = document.getElementById("sub-page");
-    if (SubPageContainer) {
-      SubPageContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    const pageIds = [
+      "Home-page",
+      "Menu-page",
+      "Highlight-page",
+      "Testimonials-page",
+      "About-page",
+      "Reservation-page",
+    ];
+    pageIds.forEach((pageId) => {
+      const page = document.getElementById(pageId);
+      if (page) {
+        page.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    });
   }
 
   const context = {
@@ -153,7 +156,6 @@ export const AuthContextProvider = ({ children }) => {
     logout,
     authReady,
     scrollToTop,
-    scrollToTopSubPage,
     stars,
     setStars,
     currentRating,

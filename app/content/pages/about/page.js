@@ -14,7 +14,7 @@ import {
 } from './styled_about';
 
 const About = () => (
-  <StyledAbout id="main-page">
+  <StyledAbout id="About-page">
     <AboutText>
       About Us
     </AboutText>

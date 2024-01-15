@@ -63,7 +63,7 @@ const Highlight = () => {
   };
 
   return (
-    <HighlightContainer id="sub-page">
+    <HighlightContainer id="Highlight-page">
       <ThisWeekandOrder>
         <HighlightHeading>
             This Weeks Specials!

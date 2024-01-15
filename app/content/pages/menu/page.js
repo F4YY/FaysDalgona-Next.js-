@@ -52,7 +52,7 @@ export default function Menu() {
           ))}
         </LeftMenu>
         <RightMenu>
-          <MenuHeader id="main-page">
+          <MenuHeader id="Menu-page">
             Menu
           </MenuHeader>
           <MainMenu/>

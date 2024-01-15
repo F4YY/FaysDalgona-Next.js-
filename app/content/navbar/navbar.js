@@ -32,8 +32,7 @@ const NavBar = () => {
     login,
     logout,
     authReady,
-    scrollToTop,
-    scrollToTopSubPage
+    scrollToTop
   } = useContext(AuthContext);
   console.log(user);
 
@@ -84,7 +83,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/'>
-            <StyledLi onClick={() => {setCurrentPage('Highlight'); scrollToTopSubPage()}} $current={currentPage === 'Highlight'}>
+            <StyledLi onClick={() => {setCurrentPage('Highlight'); scrollToTop()}} $current={currentPage === 'Highlight'}>
               Order online
             </StyledLi>
           </Link>
@@ -170,7 +169,7 @@ const NavBar = () => {
             </Link>
             <Link href='/'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Highlight');scrollToTopSubPage();setToggleMenu(false)}} $current={currentPage === 'Highlight'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Highlight');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'Highlight'}>
                   Order Online
                 </MobileMenuButton>
               </StyledLiMobile>
