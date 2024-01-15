@@ -77,7 +77,7 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/DalgonaIced/DalgonaChocoSilverqueen'>
               <StyledImage
-                src={require('../../../images/Dalg_ChocSilv.jpg')}
+                src={require("../../../images/Dalg_ChocSilv.jpg")}
                 alt="DalgChocSilv"
                 onClick={scrollToTop}
               />
@@ -92,7 +92,7 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/Croffle/CroffleOriginal'>
               <StyledImage
-                src={require('../../../images/FD_Croffle.jpg')}
+                src={require("../../../images/FD_Croffle.jpg")}
                 alt="Croffle"
                 onClick={scrollToTop}
               />
@@ -107,7 +107,7 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/MieNyemek/MieNyemekBaksoSeafood'>
               <StyledImage
-                src={require('../../../images/mienyemek_baksoseafood.jpg')}
+                src={require("../../../images/mienyemek_baksoseafood.jpg")}
                 alt="Mie Nyemek Bakso Seafood"
                 onClick={scrollToTop}
               />

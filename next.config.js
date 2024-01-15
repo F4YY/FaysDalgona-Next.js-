@@ -4,44 +4,28 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  async headers() {
+    return [
+      {
+        source: '/(.*)', // Allow any route
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*', // Allow any origin (you might want to restrict this in production)
+          },
+          {
+            key: 'Access-Control-Allow-Methods',
+            value: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+          },
+          {
+            key: 'Access-Control-Allow-Headers',
+            value: 'Origin, X-Requested-With, Content-Type, Accept',
+          },
+        ],
+      },
+    ];
+  }
 }
-  // images: {
-  //   disableStaticImages: true,
-  // },
-  // images: {
-  //   domains: [],
-  //   // Add the remote patterns for your images
-  //   loader: 'default',
-  //   path: '/_next/image',
-  //   disableStaticImages: true,
-  //   deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
-  //   imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
-  //   remotePatterns: [
-  //     {
-  //       hostname: 'localhost',
-  //       protocol: 'http', // or 'https' if applicable
-  //     },
-  //   ],
-  //   minimumCacheTTL: 60,
-  // },
-//   webpack: (config) => {
-//     config.module.rules.push({
-//       test: /\.(png|jpe?g|gif|svg)$/i,
-//       use: [
-//         {
-//           loader: 'file-loader',
-//           options: {
-//             name: '[name].[ext]',
-//             publicPath: '/_next/static/images',
-//             outputPath: 'static/images',
-//           },
-//         },
-//       ],
-//     });
-
-//     return config;
-//   }
-// }
 
 module.exports = nextConfig
 

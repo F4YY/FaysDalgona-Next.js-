@@ -84,7 +84,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/'>
-            <StyledLi onClick={() => {setCurrentPage('Hightlight'); scrollToTopSubPage()}} $current={currentPage === 'Hightlight'}>
+            <StyledLi onClick={() => {setCurrentPage('Highlight'); scrollToTopSubPage()}} $current={currentPage === 'Highlight'}>
               Order online
             </StyledLi>
           </Link>
@@ -170,7 +170,7 @@ const NavBar = () => {
             </Link>
             <Link href='/'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Hightlight');scrollToTopSubPage();setToggleMenu(false)}} $current={currentPage === 'Highlight'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Highlight');scrollToTopSubPage();setToggleMenu(false)}} $current={currentPage === 'Highlight'}>
                   Order Online
                 </MobileMenuButton>
               </StyledLiMobile>
