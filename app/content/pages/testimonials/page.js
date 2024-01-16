@@ -17,7 +17,6 @@ import {
   Testipage
 } from './styled_testi';
 import Link from 'next/link';
-import { MdLink } from 'react-icons/md';
 
 const Testimonials = () => {
   const scrollRef = React.useRef(null);
@@ -61,14 +60,14 @@ return (
       {testi.slice(0, 5).map((feedback, index) => (
         <Testicard key={index}>
           <TestiProfpicName>
-            <Profpic src={feedback.prof_pic.includes('http') ? feedback.prof_pic : `/app/images/${feedback.prof_pic}`} alt={feedback.name} priority/>
+            <Profpic src={feedback.prof_pic.includes('http') ? feedback.prof_pic : `/images/${feedback.prof_pic}`} alt={feedback.name} priority/>
             <p>{feedback.name}</p>
           </TestiProfpicName>
           <MenuAndRating>
             <MenuPicName>
               <Link href={`/content/pages/menu/productcategory/${feedback.menu_category.replace(/\s/g, '')}/${feedback.menu_name.replace(/\s/g, '')}`} width='20%'>
                 <Menupic
-                  src={`/app/images/${feedback.menu_pic}`}
+                  src={`/images/${feedback.menu_pic}`}
                   alt={feedback.menu_name}
                   priority
                 />
