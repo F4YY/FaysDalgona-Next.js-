@@ -133,9 +133,14 @@ export const AuthContextProvider = ({ children }) => {
       });
   };
 
-  const scrollToTop = () => {
+  const scrollToTopHomePage = () => {
+    const page = document.getElementById("Home-page");
+    if (page) {
+      page.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+  const scrollToTopPage = () => {
     const pageIds = [
-      "Home-page",
       "Menu-page",
       "Testimonials-page",
       "About-page",
@@ -150,9 +155,9 @@ export const AuthContextProvider = ({ children }) => {
   }
 
   const scrollToTopSubPage = () => {
-    const SubPage = document.getElementById("Sub-page");
-      if (SubPage) {
-        SubPage.scrollIntoView({ behavior: "smooth", block: "start" });
+    const page = document.getElementById("Sub-page");
+      if (page) {
+        page.scrollIntoView({ behavior: "smooth", block: "start" });
       }
   }
 
@@ -161,7 +166,8 @@ export const AuthContextProvider = ({ children }) => {
     login,
     logout,
     authReady,
-    scrollToTop,
+    scrollToTopHomePage,
+    scrollToTopPage,
     scrollToTopSubPage,
     stars,
     setStars,

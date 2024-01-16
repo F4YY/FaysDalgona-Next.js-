@@ -1,6 +1,5 @@
 'use client'
 import React from 'react';
-import FD_AboutUs from "../../../images/FD_AboutUs.jpg";
 import {
   AboutPic,
   AboutText,
@@ -20,7 +19,7 @@ const About = () => (
     </AboutText>
     <Hstackflexi>
       <AboutPic
-        src={FD_AboutUs}
+        src={`/app/images/FD_AboutUs.jpg`}
         alt='about us'
       />
       <Vstack>

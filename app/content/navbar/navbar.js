@@ -1,8 +1,6 @@
 'use client'
 import Link from "next/link";
 import React ,{ useContext, useEffect, useRef } from "react";
-import FD_Header from "../../images/FD_Header.png";
-import avatar from "../../images/avatar.jpg";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { MdOutlineLogin, MdOutlineLogout, MdOutlineRestaurantMenu } from 'react-icons/md';
 import { HStack, VStack } from "@chakra-ui/react";
@@ -32,7 +30,8 @@ const NavBar = () => {
     login,
     logout,
     authReady,
-    scrollToTop,
+    scrollToTopHomePage,
+    scrollToTopPage,
     scrollToTopSubPage
   } = useContext(AuthContext);
   console.log(user);
@@ -68,18 +67,20 @@ const NavBar = () => {
       translateY="0"
     >
       <StyledImage
-        src={FD_Header}
-        alt="app__logo"
+        src={`/images/FD_Header.png`}
+        alt="FD_logo"
+        width={65}
+        height={65}
       />
       {authReady && (
         <StyledUl>
           <Link href="/">
-            <StyledLi onClick={() => {setCurrentPage('Home'); scrollToTop()}} $current={currentPage === 'Home'}>
+            <StyledLi onClick={() => {setCurrentPage('Home'); scrollToTopHomePage()}} $current={currentPage === 'Home'}>
               Home
             </StyledLi>
           </Link>
           <Link href="/content/pages/menu">
-            <StyledLi onClick={() => {setCurrentPage('Menu'); scrollToTop()}} $current={currentPage === "Menu"}>
+            <StyledLi onClick={() => {setCurrentPage('Menu'); scrollToTopPage()}} $current={currentPage === "Menu"}>
               Menu
             </StyledLi>
           </Link>
@@ -89,17 +90,17 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/content/pages/testimonials'>
-            <StyledLi onClick={() => {setCurrentPage('Testimonials'); scrollToTop()}} $current={currentPage === "Testimonials"}>
+            <StyledLi onClick={() => {setCurrentPage('Testimonials'); scrollToTopPage()}} $current={currentPage === "Testimonials"}>
               Testimonials
             </StyledLi>
           </Link>
           <Link href='/content/pages/about'>
-            <StyledLi onClick={() => {{setCurrentPage('About'); scrollToTop()}}} $current={currentPage === "About"}>
+            <StyledLi onClick={() => {{setCurrentPage('About'); scrollToTopPage()}}} $current={currentPage === "About"}>
               About us
             </StyledLi>
           </Link>
           <Link href="/content/pages/reserve-table">
-            <StyledLi onClick={() => {{setCurrentPage('Reservation'); scrollToTop()}}} $current={currentPage === "Reservation"}>
+            <StyledLi onClick={() => {{setCurrentPage('Reservation'); scrollToTopPage()}}} $current={currentPage === "Reservation"}>
               Reserve a table
             </StyledLi>
           </Link>
@@ -126,7 +127,7 @@ const NavBar = () => {
                     alt="user"
                   />) : (
                   <UserPicture
-                    src={avatar}
+                    src={`/images/avatar.jpg`}
                     alt="user"
                   />
                   )
@@ -156,14 +157,14 @@ const NavBar = () => {
           <StyledUlmobile>
             <Link href='/'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Home');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'Home'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Home');scrollToTopHomePage();setToggleMenu(false)}} $current={currentPage === 'Home'}>
                   Home
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
             <Link href='/content/pages/menu'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Menu');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'Menu'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Menu');scrollToTopPage();setToggleMenu(false)}} $current={currentPage === 'Menu'}>
                   Menu
                 </MobileMenuButton>
               </StyledLiMobile>
@@ -177,21 +178,21 @@ const NavBar = () => {
             </Link>
             <Link href='/content/pages/testimonials'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Testimonials');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'Testimonials'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Testimonials');scrollToTopPage();setToggleMenu(false)}} $current={currentPage === 'Testimonials'}>
                   Testimonials
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
             <Link href='/content/pages/about'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('About');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'About'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('About');scrollToTopPage();setToggleMenu(false)}} $current={currentPage === 'About'}>
                   About Us
                 </MobileMenuButton>
               </StyledLiMobile>
             </Link>
             <Link href='/content/pages/reserve-table'>
               <StyledLiMobile>
-                <MobileMenuButton onClick={() => {setCurrentPage('Reservation');scrollToTop();setToggleMenu(false)}} $current={currentPage === 'Reservation'}>
+                <MobileMenuButton onClick={() => {setCurrentPage('Reservation');scrollToTopPage();setToggleMenu(false)}} $current={currentPage === 'Reservation'}>
                   Reserve a table
                 </MobileMenuButton>
               </StyledLiMobile>

@@ -19,9 +19,6 @@ import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { HStack, VStack } from '@chakra-ui/react';
-import DalgSilv from '../../../images/Dalg_ChocSilv.jpg';
-import Croffle from '../../../images/FD_Croffle.jpg';
-import MieNyemekBaksoSeafood from '../../../images/mienyemek_baksoseafood.jpg';
 
 const Highlight = () => {
   const scrollRef = React.useRef(null);
@@ -80,8 +77,10 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/DalgonaIced/DalgonaChocoSilverqueen'>
               <StyledImage
-                src={DalgSilv}
+                src={`/images/Dalg_ChocSilv.jpg`}
                 alt="DalgChocSilv"
+                width={300}
+                height={300}
                 onClick={scrollToTop}
               />
             </Link>
@@ -95,8 +94,10 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/Croffle/CroffleOriginal'>
               <StyledImage
-                src={Croffle}
+                src={`/images/FD_Croffle.jpg`}
                 alt="Croffle"
+                width={300}
+                height={300}
                 onClick={scrollToTop}
               />
             </Link>
@@ -110,8 +111,10 @@ const Highlight = () => {
           <SpecialItem>
             <Link href='/content/pages/menu/productcategory/MieNyemek/MieNyemekBaksoSeafood'>
               <StyledImage
-                src={MieNyemekBaksoSeafood}
+                src={`/images/mienyemek_baksoseafood.jpg`}
                 alt="Mie Nyemek Bakso Seafood"
+                width={300}
+                height={300}
                 onClick={scrollToTop}
               />
             </Link>
