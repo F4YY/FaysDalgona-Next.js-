@@ -137,7 +137,6 @@ export const AuthContextProvider = ({ children }) => {
     const pageIds = [
       "Home-page",
       "Menu-page",
-      "Highlight-page",
       "Testimonials-page",
       "About-page",
       "Reservation-page",
@@ -150,12 +149,20 @@ export const AuthContextProvider = ({ children }) => {
     });
   }
 
+  const scrollToTopSubPage = () => {
+    const SubPage = document.getElementById("Sub-page");
+      if (SubPage) {
+        SubPage.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+  }
+
   const context = {
     user,
     login,
     logout,
     authReady,
     scrollToTop,
+    scrollToTopSubPage,
     stars,
     setStars,
     currentRating,

@@ -12,6 +12,7 @@ import {
 import { useContext } from 'react';
 import AuthContext from '../../../context/authContext';
 import Link from 'next/link';
+import heroimg from '../../../images/FD_homepage.jpg';
 
 const HeroSection = () => {
   const { scrollToTop } = useContext(AuthContext);
@@ -21,7 +22,7 @@ const HeroSection = () => {
         <FDtext>Fay's Dalgona</FDtext>
         <FDindo>Indonesia</FDindo>
         <FDimage
-          src={require("../../../images/FD_homepage.jpg")}
+          src={heroimg}
           alt="homepage"
           priority
         />

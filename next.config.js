@@ -4,6 +4,16 @@ const nextConfig = {
   compiler: {
     styledComponents: true,
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'faysdalgona.netlify.app',
+        port: '',
+        pathname: '/app/images/**',
+      }
+    ]
+  },
   async headers() {
     return [
       {
