@@ -137,7 +137,7 @@ const DalgonaCapu = () => {
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={require(`../../../../../../images/${props.items[0].list[1].image}`)} alt={props.items[0].list[1].name} />
+        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} />
         <ProductDesc>
           <ItemName>{props.items[0].list[1].name}</ItemName>
           <RatingWrap>
@@ -175,7 +175,7 @@ const DalgonaCapu = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg loading="lazy" src={require('../../../../../../images/lotus_bischoff.jpg')} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -185,7 +185,7 @@ const DalgonaCapu = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg loading="lazy" src={require('../../../../../../images/Choco_crispyballs.jpg')} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -208,7 +208,7 @@ const DalgonaCapu = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={require('../../../../../../images/Dalg_Capu.jpg')} alt={props.items[0].list[1].name} />
+          <RatingImg src={`/images/Dalg_Capu.jpg`} alt={props.items[0].list[1].name} />
           <RatingItemName>{props.items[0].list[1].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

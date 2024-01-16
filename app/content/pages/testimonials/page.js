@@ -60,7 +60,7 @@ return (
       {testi.slice(0, 5).map((feedback, index) => (
         <Testicard key={index}>
           <TestiProfpicName>
-            <Profpic src={feedback.prof_pic.includes('http') ? feedback.prof_pic : `/images/${feedback.prof_pic}`} alt={feedback.name} priority/>
+            <Profpic src={feedback.prof_pic.includes('http') ? feedback.prof_pic : `/images/${feedback.prof_pic}`} alt={feedback.name} />
             <p>{feedback.name}</p>
           </TestiProfpicName>
           <MenuAndRating>
@@ -69,7 +69,8 @@ return (
                 <Menupic
                   src={`/images/${feedback.menu_pic}`}
                   alt={feedback.menu_name}
-                  priority
+                  width={70}
+                  height={70}
                 />
               </Link>
               <MenuNameRating>

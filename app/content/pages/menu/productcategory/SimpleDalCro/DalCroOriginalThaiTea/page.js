@@ -136,7 +136,7 @@ const DalCroOriThaiTea = () => {
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={require(`../../../../../../images/${props.items[0].list[3].image}`)} alt={props.items[0].list[3].name} />
+        <Img src={`/images/${props.items[0].list[3].image}`} alt={props.items[0].list[3].name} />
         <ProductDesc>
           <ItemName>{props.items[0].list[3].name}</ItemName>
           <RatingWrap>
@@ -176,7 +176,7 @@ const DalCroOriThaiTea = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg loading="lazy" src={require('../../../../../../images/lotus_bischoff.jpg')} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -186,7 +186,7 @@ const DalCroOriThaiTea = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg loading="lazy" src={require('../../../../../../images/Choco_crispyballs.jpg')} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -197,7 +197,7 @@ const DalCroOriThaiTea = () => {
           </ToppingList>
           <ToppingText style={{ marginTop: "20px" }}>Add-ins Dipping Sauce</ToppingText>
           <ToppingList>
-            <ToppingImg loading="lazy" src={require('../../../../../../images/Dipping_sauce.png')} alt='dipping sauce' />
+            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' />
             <ToppingDesc>
               <ToppingName>Dalgona dipping sauce</ToppingName>
               <ToppingDetailDesc>
@@ -219,7 +219,7 @@ const DalCroOriThaiTea = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg loading="lazy" src={require('../../../../../../images/DalCro_Orithaitea.jpg')} alt='dal cro capu' />
+          <RatingImg src={`/images/DalCro_Orithaitea.jpg`} alt='dal cro capu' />
           <RatingItemName>{props.items[0].list[3].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

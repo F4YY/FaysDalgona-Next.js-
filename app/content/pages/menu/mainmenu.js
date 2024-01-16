@@ -23,7 +23,7 @@ const MainMenu = () => {
               <MenuItemGroup key={itemIndex}>
                 <Link href={item.link}>
                   <MenuItemImage
-                    src={require(`../../../images/${item.imageUrl}`)}
+                    src={`/images/${item.imageUrl}`}
                     alt={item.name}
                     onClick={scrollToTop}
                   />

@@ -148,7 +148,7 @@ const ComboTrio1 = () => {
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[1].background}>
-        <Img src={require(`../../../../../../images/${props.items[1].list[4].image}`)} alt={props.items[1].list[4].name} />
+        <Img src={`/images/${props.items[1].list[4].image}`} alt={props.items[1].list[4].name} />
         <ProductDesc>
           <ItemName>{props.items[1].list[4].name}</ItemName>
           <RatingWrap>
@@ -188,7 +188,7 @@ const ComboTrio1 = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={require('../../../../../../images/lotus_bischoff.jpg')} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -198,7 +198,7 @@ const ComboTrio1 = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={require('../../../../../../images/Choco_crispyballs.jpg')} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -209,7 +209,7 @@ const ComboTrio1 = () => {
           </ToppingList>
           <ToppingText style={{ marginTop: "20px" }}>Add-ins Dipping Sauce</ToppingText>
           <ToppingList>
-            <ToppingImg src={require('../../../../../../images/Dipping_sauce.png')} alt='dipping sauce' />
+            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' />
             <ToppingDesc>
               <ToppingName>Dalgona dipping sauce</ToppingName>
               <ToppingDetailDesc>
@@ -231,7 +231,7 @@ const ComboTrio1 = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={require('../../../../../../images/ComboTrio1.jpg')} alt={props.items[1].list[4].name} priority/>
+          <RatingImg src={`/images/ComboTrio1.jpg`} alt={props.items[1].list[4].name} priority/>
           <RatingItemName>{props.items[1].list[4].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

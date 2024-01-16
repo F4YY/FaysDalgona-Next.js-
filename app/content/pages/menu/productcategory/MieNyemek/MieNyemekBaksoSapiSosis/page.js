@@ -132,7 +132,7 @@ const MieNyemekBaksoSapiSosis = () => {
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={require(`../../../../../../images/${props.items[0].list[1].image}`)} alt={props.items[0].list[1].name} />
+        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} />
         <ProductDesc>
           <ItemName>{props.items[0].list[1].name}</ItemName>
           <RatingWrap>
@@ -169,7 +169,7 @@ const MieNyemekBaksoSapiSosis = () => {
         </SizeAndOrder>
         <Topping>
           <SpicyText>Spicy Levels</SpicyText>
-          <SpicyImg src={require('../../../../../../images/Spicy_level.jpg')} alt='spicy level' />
+          <SpicyImg src={`/images/Spicy_level.jpg`} alt='spicy level' />
         </Topping>
       </ProductInfoOrder>
     </ProductDetail>
@@ -184,7 +184,7 @@ const MieNyemekBaksoSapiSosis = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={require('../../../../../../images/mienyemek_baksosapi.jpg')} alt={props.items[0].list[1].name} />
+          <RatingImg src={`/images/mienyemek_baksosapi.jpg`} alt={props.items[0].list[1].name} />
           <RatingItemName>{props.items[0].list[1].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

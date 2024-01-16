@@ -36,7 +36,7 @@ export const DalCro = () => {
           <MenuItemGroup key={item.name}>
             <Link href={item.link}>
               <MenuItemImage
-                src={require(`../../../../../images/${item.image}`)}
+                src={`/images/${item.image}`}
                 alt={item.name}
                 onClick={scrollToTop}
               />

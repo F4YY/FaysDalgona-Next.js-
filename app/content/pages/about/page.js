@@ -19,7 +19,7 @@ const About = () => (
     </AboutText>
     <Hstackflexi>
       <AboutPic
-        src={`/app/images/FD_AboutUs.jpg`}
+        src={`/images/FD_AboutUs.jpg`}
         alt='about us'
       />
       <Vstack>

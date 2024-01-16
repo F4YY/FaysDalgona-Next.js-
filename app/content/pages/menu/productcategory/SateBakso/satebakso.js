@@ -35,7 +35,7 @@ export const SateBakso = () => {
             <Link href={item.link}>
               <MenuItemImage
                 loading="lazy"
-                src={require(`../../../../../images/${item.image}`)}
+                src={`/images/${item.image}`}
                 alt={item.name}
                 onClick={scrollToTop}
               />

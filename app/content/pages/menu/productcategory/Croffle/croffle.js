@@ -35,7 +35,7 @@ export const Croffle = () => {
           <MenuItemGroup key={index}>
             <Link href={item.link}>
               <MenuItemImage
-                src={require(`../../../../../images/${item.image}`)}
+                src={`/images/${item.image}`}
                 alt={item.name}
                 onClick={scrollToTop}
               />

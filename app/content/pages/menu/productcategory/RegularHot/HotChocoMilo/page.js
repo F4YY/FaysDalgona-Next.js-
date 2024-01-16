@@ -136,7 +136,7 @@ const HotChocMilo = () => {
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[2].background}>
-        <Img src={require(`../../../../../../images/${props.items[2].list[4].image}`)} alt={props.items[2].list[4].name} />
+        <Img src={`/images/${props.items[2].list[4].image}`} alt={props.items[2].list[4].name} />
         <ProductDesc>
           <ItemName>{props.items[2].list[4].name}</ItemName>
           <RatingWrap>
@@ -174,7 +174,7 @@ const HotChocMilo = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={require('../../../../../../images/lotus_bischoff.jpg')} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -184,7 +184,7 @@ const HotChocMilo = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={require('../../../../../../images/Choco_crispyballs.jpg')} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -207,7 +207,7 @@ const HotChocMilo = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={require('../../../../../../images/ReguHot_ChocMilo.jpg')} alt={props.items[2].list[4].name} />
+          <RatingImg src={`/images/ReguHot_ChocMilo.jpg`} alt={props.items[2].list[4].name} />
           <RatingItemName>{props.items[2].list[4].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>
