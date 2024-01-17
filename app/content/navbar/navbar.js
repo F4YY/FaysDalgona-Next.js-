@@ -86,8 +86,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href="/content/pages/menu">
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('Menu')
                 scrollToTopPage()
               }}
@@ -97,8 +96,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/'>
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('Highlight')
                 scrollToTopSubPage()
               }}
@@ -108,8 +106,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/content/pages/testimonials'>
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('Testimonials')
                 scrollToTopPage()
               }}
@@ -119,8 +116,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href='/content/pages/about'>
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('About')
                 scrollToTopPage()
               }}
@@ -130,8 +126,7 @@ const NavBar = () => {
             </StyledLi>
           </Link>
           <Link href="/content/pages/reserve-table">
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('Reservation')
                 scrollToTopPage()
               }}
