@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const DalgonaCapu = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -89,7 +89,6 @@ const DalgonaCapu = () => {
       const timer = setTimeout(() => {
         setShowNotif(false);
       }, 3000);
-
       return () => clearTimeout(timer);
     }
     fetch("https://fays-dalgona.onrender.com/Testimonials")
@@ -112,18 +111,18 @@ const DalgonaCapu = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/DalgonaIced'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[0].name}
             </CategoryText>
           </Link>
@@ -131,13 +130,13 @@ const DalgonaCapu = () => {
           <ItemText>{props.items[0].list[1].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/DalgonaIced">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} />
+        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[0].list[1].name}</ItemName>
           <RatingWrap>
@@ -175,7 +174,7 @@ const DalgonaCapu = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -185,7 +184,7 @@ const DalgonaCapu = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -208,7 +207,7 @@ const DalgonaCapu = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/Dalg_Capu.jpg`} alt={props.items[0].list[1].name} />
+          <RatingImg src={`/images/Dalg_Capu.jpg`} alt={props.items[0].list[1].name} width={50} height={50}/>
           <RatingItemName>{props.items[0].list[1].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

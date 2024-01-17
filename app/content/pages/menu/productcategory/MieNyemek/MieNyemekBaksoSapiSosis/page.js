@@ -53,7 +53,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const MieNyemekBaksoSapiSosis = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -107,18 +107,18 @@ const MieNyemekBaksoSapiSosis = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href={`/content/pages/menu/productcategory/${props.items[0].name.replace(/\s/g, '')}`}>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[0].name}
             </CategoryText>
           </Link>
@@ -126,13 +126,13 @@ const MieNyemekBaksoSapiSosis = () => {
           <ItemText>{props.items[0].list[1].name}</ItemText>
         </Path>
         <Link href={`/content/pages/menu/productcategory/${props.items[0].name.replace(/\s/g, '')}`}>
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} />
+        <Img src={`/images/${props.items[0].list[1].image}`} alt={props.items[0].list[1].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[0].list[1].name}</ItemName>
           <RatingWrap>
@@ -169,7 +169,7 @@ const MieNyemekBaksoSapiSosis = () => {
         </SizeAndOrder>
         <Topping>
           <SpicyText>Spicy Levels</SpicyText>
-          <SpicyImg src={`/images/Spicy_level.jpg`} alt='spicy level' />
+          <SpicyImg src={`/images/Spicy_level.jpg`} alt='spicy level' width={100} height={100}/>
         </Topping>
       </ProductInfoOrder>
     </ProductDetail>
@@ -184,7 +184,7 @@ const MieNyemekBaksoSapiSosis = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/mienyemek_baksosapi.jpg`} alt={props.items[0].list[1].name} />
+          <RatingImg src={`/images/mienyemek_baksosapi.jpg`} alt={props.items[0].list[1].name} width={50} height={50}/>
           <RatingItemName>{props.items[0].list[1].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

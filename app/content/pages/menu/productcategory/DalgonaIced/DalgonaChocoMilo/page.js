@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const DalgonaChocMilo = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -112,18 +112,18 @@ const DalgonaChocMilo = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/DalgonaIced'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[0].name}
             </CategoryText>
           </Link>
@@ -131,13 +131,13 @@ const DalgonaChocMilo = () => {
           <ItemText>{props.items[0].list[4].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/DalgonaIced">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[0].background}>
-        <Img src={`/images/${props.items[0].list[4].image}`} alt={props.items[0].list[4].name} />
+        <Img src={`/images/${props.items[0].list[4].image}`} alt={props.items[0].list[4].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[0].list[4].name}</ItemName>
           <RatingWrap>
@@ -175,7 +175,7 @@ const DalgonaChocMilo = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -185,7 +185,7 @@ const DalgonaChocMilo = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -208,7 +208,7 @@ const DalgonaChocMilo = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/Dalg_ChocMilo.jpg`} alt={props.items[0].list[4].name} />
+          <RatingImg src={`/images/Dalg_ChocMilo.jpg`} alt={props.items[0].list[4].name} width={50} height={50}/>
           <RatingItemName>{props.items[0].list[4].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

@@ -23,7 +23,7 @@ import { HStack, VStack } from '@chakra-ui/react';
 const Highlight = () => {
   const scrollRef = React.useRef(null);
   const {
-    scrollToTop,
+    scrollToTopPage,
     showLeftChevron,
     showRightChevron,
     setShowLeftChevron,
@@ -81,7 +81,7 @@ const Highlight = () => {
                 alt="DalgChocSilv"
                 width={300}
                 height={300}
-                onClick={scrollToTop}
+                onClick={scrollToTopPage}
               />
             </Link>
             <TopMenu
@@ -98,7 +98,7 @@ const Highlight = () => {
                 alt="Croffle"
                 width={300}
                 height={300}
-                onClick={scrollToTop}
+                onClick={scrollToTopPage}
               />
             </Link>
             <TopMenu
@@ -115,7 +115,7 @@ const Highlight = () => {
                 alt="Mie Nyemek Bakso Seafood"
                 width={300}
                 height={300}
-                onClick={scrollToTop}
+                onClick={scrollToTopPage}
               />
             </Link>
             <TopMenu

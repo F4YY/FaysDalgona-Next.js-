@@ -14,7 +14,7 @@ import AuthContext from '../../../context/authContext';
 import Link from 'next/link';
 
 const HeroSection = () => {
-  const { scrollToTop } = useContext(AuthContext);
+  const { scrollToTopPage } = useContext(AuthContext);
   return (
     <StyledHeroSection id="Home-page">
       <StyledFeatures>
@@ -32,7 +32,7 @@ const HeroSection = () => {
           Additionally, we also serve delicious food options such as Mie Nyemek, Croffle Original, and Sate Bakso Seafood, perfect to accompany your Dalgona experience.
         </FDdesc>
         <Link href='/content/pages/reserve-table'>
-          <ReservetableButton onClick={scrollToTop}>
+          <ReservetableButton onClick={scrollToTopPage}>
             Reserve a table
           </ReservetableButton>
         </Link>

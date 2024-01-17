@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const HotTiramisu = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -111,18 +111,18 @@ const HotTiramisu = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/RegularHot'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[2].name}
             </CategoryText>
           </Link>
@@ -130,13 +130,13 @@ const HotTiramisu = () => {
           <ItemText>{props.items[2].list[9].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/RegularHot">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[2].background}>
-        <Img src={`/images/${props.items[2].list[9].image}`} alt={props.items[2].list[9].name} />
+        <Img src={`/images/${props.items[2].list[9].image}`} alt={props.items[2].list[9].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[2].list[9].name}</ItemName>
           <RatingWrap>
@@ -174,7 +174,7 @@ const HotTiramisu = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -184,7 +184,7 @@ const HotTiramisu = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100} />
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -207,7 +207,7 @@ const HotTiramisu = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/ReguHot_Tira.jpg`} alt={props.items[2].list[9].name} />
+          <RatingImg src={`/images/ReguHot_Tira.jpg`} alt={props.items[2].list[9].name} width={50} height={50}/>
           <RatingItemName>{props.items[2].list[9].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

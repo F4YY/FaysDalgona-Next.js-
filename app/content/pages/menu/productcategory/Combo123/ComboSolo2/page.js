@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const ComboSolo2 = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -111,18 +111,18 @@ const ComboSolo2 = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/Combo123'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[1].name}
             </CategoryText>
           </Link>
@@ -130,13 +130,13 @@ const ComboSolo2 = () => {
           <ItemText>{props.items[1].list[1].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/Combo123">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[1].background}>
-        <Img src={`/images/${props.items[1].list[1].image}`} alt={props.items[1].list[1].name} />
+        <Img src={`/images/${props.items[1].list[1].image}`} alt={props.items[1].list[1].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[1].list[1].name}</ItemName>
           <RatingWrap>
@@ -176,7 +176,7 @@ const ComboSolo2 = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -186,7 +186,7 @@ const ComboSolo2 = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -197,7 +197,7 @@ const ComboSolo2 = () => {
           </ToppingList>
           <ToppingText style={{ marginTop: "20px" }}>Add-ins Dipping Sauce</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' />
+            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Dalgona dipping sauce</ToppingName>
               <ToppingDetailDesc>
@@ -219,7 +219,7 @@ const ComboSolo2 = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/ComboSolo2.jpg`} alt={props.items[1].list[1].name} priority/>
+          <RatingImg src={`/images/ComboSolo2.jpg`} alt={props.items[1].list[1].name} width={50} height={50}/>
           <RatingItemName>{props.items[1].list[1].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

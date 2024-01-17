@@ -19,13 +19,13 @@ import Link from 'next/link';
 import AuthContext from '../../../../../context/authContext';
 
 export default function Mie_Nyemek() {
-  const { scrollToTop } = React.useContext(AuthContext);
+  const { scrollToTopPage } = React.useContext(AuthContext);
   return (
-    <Wrapper id='AllMenu-section'>
+    <Wrapper>
       <AuxiliaryNavigation>
         <AuxNavList>
           <Link href='/content/pages/menu'>
-            <MenuItem onClick={scrollToTop}>
+            <MenuItem onClick={scrollToTopPage}>
               Menu
             </MenuItem>
           </Link>
@@ -42,7 +42,7 @@ export default function Mie_Nyemek() {
                 {menu.category}
               </MenuTitle>
               {menu.items.map((item, index) => (
-              <MenuItemList key={index} onClick={scrollToTop}>
+              <MenuItemList key={index} onClick={scrollToTopPage}>
                 <Link href={item.link}>
                   {item.name}
                 </Link>
@@ -52,7 +52,7 @@ export default function Mie_Nyemek() {
           ))}
         </LeftMenu>
         <RightMenu>
-          <MenuHeader id="main-menu-container">
+          <MenuHeader id="Menu-page">
             Menu
           </MenuHeader>
           <MieNyemek/>

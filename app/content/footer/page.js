@@ -73,7 +73,7 @@ const FootNav = () => {
         </OpenHours>
       </FootWrapper>
       <Copyright>
-        <FDlogo src={require("../../images/FooterFD.png")} alt="LL_Footer" width="25%"/>
+        <FDlogo src={`/images/FooterFD.png`} alt="LL_Footer" width={100} height={100}/>
         <p>© 2023</p>
       </Copyright>
     </Footer>

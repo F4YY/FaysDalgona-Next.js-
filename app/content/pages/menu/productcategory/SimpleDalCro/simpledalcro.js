@@ -16,14 +16,14 @@ import { useContext } from 'react';
 import AuthContext from '../../../../../context/authContext';
 
 export const DalCro = () => {
-  const { scrollToTop } = useContext(AuthContext);
+  const { scrollToTopPage } = useContext(AuthContext);
   const dalCro = menudata.menu.find((menu) => menu.category === "Combo" && menu.items[0].name === "Simple DalCro");
   if (!dalCro) {
     return null;
   }
   return (
     <>
-      <MenuCategory id={`${dalCro.items[0].title}-section`}>
+      <MenuCategory id='Menu-page'>
         {dalCro.items[0].name}
         <Link href="/content/pages/menu">
           <BackButtontoMain>
@@ -38,10 +38,12 @@ export const DalCro = () => {
               <MenuItemImage
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

@@ -21,6 +21,8 @@ const About = () => (
       <AboutPic
         src={`/images/FD_AboutUs.jpg`}
         alt='about us'
+        width={400}
+        height={400}
       />
       <Vstack>
         <TitleAndSub>

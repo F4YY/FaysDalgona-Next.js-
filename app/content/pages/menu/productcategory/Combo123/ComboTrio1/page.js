@@ -65,6 +65,7 @@ const ComboTrio1 = () => {
     hoverRating,
     setHoverRating,
     authReady,
+    scrollToTopPage,
     handleRateMenu,
     handleSubmit,
     showAlert,
@@ -79,21 +80,11 @@ const ComboTrio1 = () => {
     setMenuName,
     user
   } = useContext(AuthContext);
-  const handleClick = (anchor) => {
-    scrollToTop();
-  }
-  const scrollToTop = () => {
-    const mainMenuContainer = document.getElementById("main-menu-container");
-    if (mainMenuContainer) {
-      mainMenuContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
 
   const [isClickable, setIsClickable] = React.useState(true);
   const [feedbackTouched, setFeedbackTouched] = React.useState(false);
 
   React.useEffect(() => {
-    scrollToTop();
     if (showNotif) {
       const timer = setTimeout(() => {
         setShowNotif(false);
@@ -126,15 +117,13 @@ const ComboTrio1 = () => {
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/Combo123'>
-            <CategoryText
-              onClick={() => handleClick()}
-            >
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[1].name}
             </CategoryText>
           </Link>
@@ -142,13 +131,13 @@ const ComboTrio1 = () => {
           <ItemText>{props.items[1].list[4].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/Combo123">
-          <BackButton>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[1].background}>
-        <Img src={`/images/${props.items[1].list[4].image}`} alt={props.items[1].list[4].name} />
+        <Img src={`/images/${props.items[1].list[4].image}`} alt={props.items[1].list[4].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[1].list[4].name}</ItemName>
           <RatingWrap>
@@ -188,7 +177,7 @@ const ComboTrio1 = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -198,7 +187,7 @@ const ComboTrio1 = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -209,7 +198,7 @@ const ComboTrio1 = () => {
           </ToppingList>
           <ToppingText style={{ marginTop: "20px" }}>Add-ins Dipping Sauce</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' />
+            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Dalgona dipping sauce</ToppingName>
               <ToppingDetailDesc>
@@ -231,7 +220,7 @@ const ComboTrio1 = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/ComboTrio1.jpg`} alt={props.items[1].list[4].name} priority/>
+          <RatingImg src={`/images/ComboTrio1.jpg`} alt={props.items[1].list[4].name} width={50} height={50}/>
           <RatingItemName>{props.items[1].list[4].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

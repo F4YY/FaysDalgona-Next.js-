@@ -15,17 +15,17 @@ import Link from 'next/link';
 import authContext from '../../../../../context/authContext';
 
 export const Croffle = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   const croffle = menudata.menu.find((menu) => menu.category === "Food" && menu.items[1].name === "Croffle");
   if (!croffle) {
     return null;
   }
   return (
     <>
-      <MenuCategory id={`${croffle.items[1].title}-section`}>
+      <MenuCategory id='Menu-page'>
         {croffle.items[1].name}
         <Link href="/content/pages/menu">
-          <BackButtontoMain onClick={scrollToTop}>
+          <BackButtontoMain onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButtontoMain>
         </Link>
@@ -37,10 +37,12 @@ export const Croffle = () => {
               <MenuItemImage
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

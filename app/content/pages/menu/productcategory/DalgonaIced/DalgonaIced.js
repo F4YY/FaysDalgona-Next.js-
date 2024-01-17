@@ -15,14 +15,14 @@ import Link from "next/link";
 import authContext from "../../../../../context/authContext";
 
 const DalgonaIced = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   const dalgonaIced = menudata.menu.find((menu) => menu.category === "Drinks" && menu.items[0].name === "Dalgona Iced");
   if (!dalgonaIced) {
     return null;
   }
   return (
     <>
-      <MenuCategory id={`${dalgonaIced.items[0].title}-section`}>
+      <MenuCategory id='Menu-page'>
         {dalgonaIced.items[0].name}
         <Link href="/content/pages/menu">
           <BackButtontoMain>
@@ -37,10 +37,12 @@ const DalgonaIced = () => {
               <MenuItemImage
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

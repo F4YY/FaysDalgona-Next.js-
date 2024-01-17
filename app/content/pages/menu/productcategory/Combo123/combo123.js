@@ -15,14 +15,14 @@ import Link from 'next/link';
 import authContext from '../../../../../context/authContext';
 
 export const Combo123 = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   const combo123 = menudata.menu.find((menu) => menu.category === "Combo" && menu.items[1].name === "Combo 123");
   if (!combo123) {
     return null;
   }
   return (
     <>
-      <MenuCategory id={`${combo123.items[1].title}-section`}>
+      <MenuCategory id='Menu-page'>
         {combo123.items[1].name}
         <Link href="/content/pages/menu">
           <BackButtontoMain>
@@ -37,10 +37,12 @@ export const Combo123 = () => {
               <MenuItemImage
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

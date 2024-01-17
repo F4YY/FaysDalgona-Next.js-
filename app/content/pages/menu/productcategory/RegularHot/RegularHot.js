@@ -15,14 +15,14 @@ import Link from 'next/link';
 import authContext from '../../../../../context/authContext';
 
 export const RegularHot = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   const regularHot = menudata.menu.find((menu) => menu.category === "Drinks" && menu.items[2].name === "Regular Hot");
   if (!regularHot) {
     return null;
   }
   return (
     <div>
-      <MenuCategory id={`${regularHot.items[2].title}-section`}>
+      <MenuCategory id='Menu-page'>
         {regularHot.items[2].name}
         <Link href="/content/pages/menu">
           <BackButtontoMain>
@@ -37,10 +37,12 @@ export const RegularHot = () => {
               <MenuItemImage
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

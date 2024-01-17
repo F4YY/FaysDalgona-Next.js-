@@ -12,9 +12,9 @@ import Link from 'next/link';
 import authContext from "../../../context/authContext";
 
 const MainMenu = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   return (
-    <div id="main-menu-container">
+    <div id="Menu-page">
       {menudata.menu.map((menu, menuIndex) => (
         <React.Fragment key={menuIndex}>
           <MenuCategory>{menu.category}</MenuCategory>
@@ -25,10 +25,12 @@ const MainMenu = () => {
                   <MenuItemImage
                     src={`/images/${item.imageUrl}`}
                     alt={item.name}
-                    onClick={scrollToTop}
+                    width={112}
+                    height={112}
+                    onClick={scrollToTopPage}
                   />
                 </Link>
-                <MenuItemText key={itemIndex} onClick={scrollToTop}>
+                <MenuItemText key={itemIndex} onClick={scrollToTopPage}>
                   <Link href={item.link}>
                     {item.name}
                   </Link>

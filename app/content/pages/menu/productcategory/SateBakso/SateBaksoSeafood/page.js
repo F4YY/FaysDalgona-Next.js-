@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const SateBaksoSeafood = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -111,18 +111,18 @@ const SateBaksoSeafood = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/SateBakso'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[2].name}
             </CategoryText>
           </Link>
@@ -130,13 +130,13 @@ const SateBaksoSeafood = () => {
           <ItemText>{props.items[2].list[0].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/SateBakso">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[2].background}>
-        <Img src={`/images/${props.items[2].list[0].image}`} alt={props.items[2].list[0].name} />
+        <Img src={`/images/${props.items[2].list[0].image}`} alt={props.items[2].list[0].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[2].list[0].name}</ItemName>
           <RatingWrap>
@@ -176,7 +176,7 @@ const SateBaksoSeafood = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -186,7 +186,7 @@ const SateBaksoSeafood = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -197,7 +197,7 @@ const SateBaksoSeafood = () => {
           </ToppingList>
           <ToppingText style={{ marginTop: "20px" }}>Add-ins Dipping Sauce</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' />
+            <ToppingImg src={`/images/Dipping_sauce.png`} alt='dipping sauce' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Dalgona dipping sauce</ToppingName>
               <ToppingDetailDesc>
@@ -219,7 +219,7 @@ const SateBaksoSeafood = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/SateBaksoSeafood.jpg`} alt={props.items[2].list[0].name} priority/>
+          <RatingImg src={`/images/SateBaksoSeafood.jpg`} alt={props.items[2].list[0].name} width={50} height={50}/>
           <RatingItemName>{props.items[2].list[0].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>

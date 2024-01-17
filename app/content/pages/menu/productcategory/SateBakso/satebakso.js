@@ -14,7 +14,7 @@ import Link from 'next/link';
 import authContext from '../../../../../context/authContext';
 
 export const SateBakso = () => {
-  const { scrollToTop } = React.useContext(authContext);
+  const { scrollToTopPage } = React.useContext(authContext);
   const sateSeafood = menudata.menu.find((menu) => menu.category === "Food" && menu.items[2].name === "Sate Bakso");
   if (!sateSeafood) {
     return null;
@@ -34,13 +34,14 @@ export const SateBakso = () => {
           <MenuItemGroup key={item.name}>
             <Link href={item.link}>
               <MenuItemImage
-                loading="lazy"
                 src={`/images/${item.image}`}
                 alt={item.name}
-                onClick={scrollToTop}
+                width={200}
+                height={200}
+                onClick={scrollToTopPage}
               />
             </Link>
-            <MenuItemText onClick={scrollToTop}>
+            <MenuItemText onClick={scrollToTopPage}>
               <Link href={item.link}>
                 {item.name}
               </Link>

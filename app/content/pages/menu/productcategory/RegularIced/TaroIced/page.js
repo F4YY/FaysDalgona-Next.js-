@@ -57,7 +57,7 @@ import AuthContext from '../../../../../../context/authContext';
 
 const TaroIced = () => {
   const {
-    scrollToTop,
+    scrollToTopPage,
     stars,
     rateMenu,
     setRateMenu,
@@ -111,18 +111,18 @@ const TaroIced = () => {
   return (
     <>
     <ProductDetail
-      id="main-menu-container"
+      id="Menu-page"
     >
       <PathAndBackButton>
         <Path>
           <Link href="/content/pages/menu">
-            <MenuText onClick={scrollToTop}>Menu</MenuText>
+            <MenuText onClick={scrollToTopPage}>Menu</MenuText>
           </Link>
           <Slash>/</Slash>
           <DrinkText>{props.category}</DrinkText>
           <Slash>/</Slash>
           <Link href='/content/pages/menu/productcategory/RegularIced'>
-            <CategoryText onClick={scrollToTop}>
+            <CategoryText onClick={scrollToTopPage}>
               {props.items[1].name}
             </CategoryText>
           </Link>
@@ -130,13 +130,13 @@ const TaroIced = () => {
           <ItemText>{props.items[1].list[7].name}</ItemText>
         </Path>
         <Link href="/content/pages/menu/productcategory/RegularIced">
-          <BackButton onClick={scrollToTop}>
+          <BackButton onClick={scrollToTopPage}>
             <FontAwesomeIcon icon={faChevronLeft} />&nbsp;Back
           </BackButton>
         </Link>
       </PathAndBackButton>
       <ProductHero $background={props.items[1].background}>
-        <Img src={`/images/${props.items[1].list[7].image}`} alt={props.items[1].list[7].name} />
+        <Img src={`/images/${props.items[1].list[7].image}`} alt={props.items[1].list[7].name} width={500} height={500}/>
         <ProductDesc>
           <ItemName>{props.items[1].list[7].name}</ItemName>
           <RatingWrap>
@@ -174,7 +174,7 @@ const TaroIced = () => {
         <Topping>
           <ToppingText>Add-ins Topping</ToppingText>
           <ToppingList>
-            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' />
+            <ToppingImg src={`/images/lotus_bischoff.jpg`} alt='lotus bischoff' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Lotus Biscoff Crumbles</ToppingName>
               <ToppingDetailDesc>
@@ -184,7 +184,7 @@ const TaroIced = () => {
             </ToppingDesc>
           </ToppingList>
           <ToppingList>
-            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' />
+            <ToppingImg src={`/images/Choco_crispyballs.jpg`} alt='choco crispy ball' width={100} height={100}/>
             <ToppingDesc>
               <ToppingName>Choco Crispy Balls</ToppingName>
               <ToppingDetailDesc>
@@ -207,7 +207,7 @@ const TaroIced = () => {
         />
         <p>Tell others what you think.</p>
         <RatingMenuWrap>
-          <RatingImg src={`/images/ReguIced_Taro.jpg`} alt={props.items[1].list[7].name} />
+          <RatingImg src={`/images/ReguIced_Taro.jpg`} alt={props.items[1].list[7].name} width={50} height={50}/>
           <RatingItemName>{props.items[1].list[7].name}</RatingItemName>
         </RatingMenuWrap>
         <YellowStars>
