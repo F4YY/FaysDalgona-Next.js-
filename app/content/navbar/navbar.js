@@ -75,32 +75,68 @@ const NavBar = () => {
       {authReady && (
         <StyledUl>
           <Link href="/">
-            <StyledLi onClick={() => {setCurrentPage('Home'); scrollToTopHomePage()}} $current={currentPage === 'Home'}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('Home')
+                scrollToTopHomePage()
+              }}
+              $current={currentPage === 'Home'}
+            >
               Home
             </StyledLi>
           </Link>
           <Link href="/content/pages/menu">
-            <StyledLi onClick={() => {setCurrentPage('Menu'); scrollToTopPage()}} $current={currentPage === "Menu"}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('Menu')
+                scrollToTopPage()
+              }}
+              $current={currentPage === "Menu"}
+            >
               Menu
             </StyledLi>
           </Link>
           <Link href='/'>
-            <StyledLi onClick={() => {setCurrentPage('Highlight'); scrollToTopSubPage()}} $current={currentPage === 'Highlight'}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('Highlight')
+                scrollToTopSubPage()
+              }}
+              $current={currentPage === 'Highlight'}
+            >
               Order online
             </StyledLi>
           </Link>
           <Link href='/content/pages/testimonials'>
-            <StyledLi onClick={() => {setCurrentPage('Testimonials'); scrollToTopPage()}} $current={currentPage === "Testimonials"}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('Testimonials')
+                scrollToTopPage()
+              }}
+              $current={currentPage === "Testimonials"}
+            >
               Testimonials
             </StyledLi>
           </Link>
           <Link href='/content/pages/about'>
-            <StyledLi onClick={() => {setCurrentPage('About'); scrollToTopPage()}} $current={currentPage === "About"}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('About')
+                scrollToTopPage()
+              }}
+              $current={currentPage === "About"}
+            >
               About us
             </StyledLi>
           </Link>
           <Link href="/content/pages/reserve-table">
-            <StyledLi onClick={() => {setCurrentPage('Reservation'); scrollToTopPage()}} $current={currentPage === "Reservation"}>
+            <StyledLi onClick={(e) => {
+                e.preventDefault()
+                setCurrentPage('Reservation')
+                scrollToTopPage()
+              }}
+              $current={currentPage === "Reservation"}
+            >
               Reserve a table
             </StyledLi>
           </Link>
