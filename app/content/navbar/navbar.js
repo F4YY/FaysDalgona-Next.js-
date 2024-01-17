@@ -75,8 +75,7 @@ const NavBar = () => {
       {authReady && (
         <StyledUl>
           <Link href="/">
-            <StyledLi onClick={(e) => {
-                e.preventDefault()
+            <StyledLi onClick={() => {
                 setCurrentPage('Home')
                 scrollToTopHomePage()
               }}
