@@ -45,12 +45,12 @@ const nextConfig = {
       },
     ],
   }),
-  generateStaticParams: async function () {
-    return {
-      '/': { page: '/' },
-      '/about': { page: '/about' },
-    };
-  },
+  // generateStaticParams: async function () {
+  //   return {
+  //     '/': { page: '/' },
+  //     '/about': { page: '/about' },
+  //   };
+  // },
 }
 
 module.exports = nextConfig
