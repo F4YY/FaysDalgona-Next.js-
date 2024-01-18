@@ -6,59 +6,22 @@ const nextConfig = {
   },
   images: {
     domains: ['lh3.googleusercontent.com'],
-    // remotePatterns: [
-    //   {
-    //     protocol: 'https',
-    //     hostname: 'faysdalgona.netlify.app',
-    //     port: '',
-    //     pathname: '/app/images/**',
-    //   }
-    // ]
   },
-  // async headers() {
-  //   return [
+  // rewrites: async () => ({
+  //   beforeFiles: [
   //     {
-  //       source: '/(.*)', // Allow any route
-  //       headers: [
-  //         {
-  //           key: 'Access-Control-Allow-Origin',
-  //           value: '*', // Allow any origin (you might want to restrict this in production)
-  //         },
-  //         {
-  //           key: 'Access-Control-Allow-Methods',
-  //           value: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  //         },
-  //         {
-  //           key: 'Access-Control-Allow-Headers',
-  //           value: 'Origin, X-Requested-With, Content-Type, Accept',
-  //         },
-  //       ],
+  //       source: '/(.*)',
+  //       destination: '/',
   //     },
-  //   ];
-  // },
-
-  rewrites: async () => ({
-    beforeFiles: [
-      {
-        source: '/(.*)',
-        destination: '/',
-      },
-    ],
-  }),
-
-  redirects: async () => [
-    {
-      source: '/about',
-      destination: '/content/pages/about',
-      permanent: true,
-    },
-  ]
-  // generateStaticParams: async function () {
-  //   return {
-  //     '/': { page: '/' },
-  //     '/about': { page: '/about' },
-  //   };
-  // },
+  //   ],
+  // }),
+  // redirects: async () => [
+  //   {
+  //     source: '/about',
+  //     destination: '/content/pages/about',
+  //     permanent: true,
+  //   },
+  // ]
 }
 
 module.exports = nextConfig
