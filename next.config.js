@@ -36,7 +36,15 @@ const nextConfig = {
     ];
   },
 
-  exportPathMap: async function () {
+  rewrites: async () => ({
+    beforeFiles: [
+      {
+        source: '/(.*)',
+        destination: '/',
+      },
+    ],
+  }),
+  generateStaticParams: async function () {
     return {
       '/': { page: '/' },
       '/about': { page: '/about' },
