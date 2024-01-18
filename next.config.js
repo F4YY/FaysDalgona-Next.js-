@@ -34,7 +34,14 @@ const nextConfig = {
         ],
       },
     ];
-  }
+  },
+
+  exportPathMap: async function () {
+    return {
+      '/': { page: '/' },
+      '/about': { page: '/about' },
+    };
+  },
 }
 
 module.exports = nextConfig
