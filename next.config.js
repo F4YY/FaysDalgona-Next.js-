@@ -37,14 +37,14 @@ const nextConfig = {
   //   ];
   // },
 
-  // rewrites: async () => ({
-  //   beforeFiles: [
-  //     {
-  //       source: '/(.*)',
-  //       destination: '/',
-  //     },
-  //   ],
-  // }),
+  rewrites: async () => ({
+    beforeFiles: [
+      {
+        source: '/(.*)',
+        destination: '/',
+      },
+    ],
+  }),
   generateStaticParams: async function () {
     return {
       '/': { page: '/' },
