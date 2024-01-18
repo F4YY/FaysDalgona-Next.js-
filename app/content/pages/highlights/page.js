@@ -18,7 +18,7 @@ import AuthContext from '../../../context/authContext';
 import Link from 'next/link';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { HStack, VStack } from '@chakra-ui/react';
+import { HStack } from '@chakra-ui/react';
 
 const Highlight = () => {
   const scrollRef = React.useRef(null);
@@ -29,6 +29,7 @@ const Highlight = () => {
     setShowLeftChevron,
     setShowRightChevron
   } = useContext(AuthContext);
+
   React.useEffect(() => {
     const handleScroll = () => {
       if (scrollRef.current) {
@@ -50,18 +51,17 @@ const Highlight = () => {
   }, []);
   const scrollToLeft = () => {
     scrollRef.current.scrollBy({
-      left: -300,
+      left: -340,
       behavior: "smooth",
     });
   };
 
   const scrollToRight = () => {
     scrollRef.current.scrollBy({
-      left: 300,
+      left: 340,
       behavior: "smooth",
     });
   };
-
   return (
     <HighlightContainer id="Sub-page">
       <ThisWeekandOrder>
@@ -79,8 +79,8 @@ const Highlight = () => {
               <StyledImage
                 src={`/images/Dalg_ChocSilv.jpg`}
                 alt="DalgChocSilv"
-                width={300}
-                height={300}
+                width={340}
+                height={400}
                 onClick={scrollToTopPage}
               />
             </Link>
@@ -96,8 +96,8 @@ const Highlight = () => {
               <StyledImage
                 src={`/images/FD_Croffle.jpg`}
                 alt="Croffle"
-                width={300}
-                height={300}
+                width={340}
+                height={400}
                 onClick={scrollToTopPage}
               />
             </Link>
@@ -113,8 +113,8 @@ const Highlight = () => {
               <StyledImage
                 src={`/images/mienyemek_baksoseafood.jpg`}
                 alt="Mie Nyemek Bakso Seafood"
-                width={300}
-                height={300}
+                width={340}
+                height={400}
                 onClick={scrollToTopPage}
               />
             </Link>

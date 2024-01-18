@@ -59,7 +59,7 @@ export const MenuWrapper = styled.div`
 export const SpecialMenu = styled.div`
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
+  min-height: 90vh;
   justify-content: space-around;
   align-items: flex-start;
   overflow: scroll;
@@ -71,7 +71,7 @@ export const SpecialMenu = styled.div`
     background: transparent;
   }
   gap: 4rem;
-  margin: 2rem 5rem;
+  margin: 2rem 5rem 0;
   @media (max-width: 991px) {
     justify-content: flex-start;
     gap: 2rem;
@@ -82,7 +82,7 @@ export const SpecialMenu = styled.div`
     align-items: center;
     overflow: initial;
     gap: 3rem;
-    margin: auto auto 4rem;
+    margin: auto auto 2rem;
   }
 `
 export const SpecialItem = styled.div`
@@ -123,6 +123,19 @@ export const LeftChevron = styled.div`
 `;
 
 export const RightChevron = styled(LeftChevron)`
+`;
+
+export const LeftChevronTesti = styled(LeftChevron)`
+  display: flex;
+  @media (max-width: 991px) {
+    display: none;
+  }
+  @media (max-width: 640px) {
+    display: none;
+  }
+`;
+
+export const RightChevronTesti = styled(LeftChevronTesti)`
 `;
 
 export const StyledImage = styled(Image)`

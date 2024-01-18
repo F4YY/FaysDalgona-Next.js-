@@ -397,6 +397,7 @@ export const ProductDetail = styled.div`
   z-index: 0;
   background-color: #fff;
   display: flex;
+  width: 100%;
   flex-direction: column;
   pointer-events: ${({ rateMenu, showAlert }) => (rateMenu || showAlert ? 'none' : 'auto')};
   filter: brightness(${({ rateMenu, showAlert }) => (rateMenu || showAlert ? '0.5' : '1')});
@@ -861,7 +862,7 @@ export const SubmitRating = styled.button`
 
 export const Topping = styled.div`
   display: flex;
-  width: 60%;
+  width: 40%;
   flex-direction: column;
   @media (max-width: 640px) {
     width: 90%;

@@ -6,7 +6,6 @@ import {
   MenuNameRating,
   MenuPicName,
   Menupic,
-  MenupicWrapper,
   Profpic,
   RightQuote,
   StarRating,
@@ -17,6 +16,12 @@ import {
   Testipage
 } from './styled_testi';
 import Link from 'next/link';
+import { HStack } from '@chakra-ui/react';
+import { LeftChevronTesti, RightChevronTesti } from '../highlights/styled_highlight';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import AuthContext from '../../../context/authContext';
+import { useContext } from 'react';
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const Testimonials = () => {
   const scrollRef = React.useRef(null);
@@ -29,7 +34,24 @@ React.useEffect(() => {
     })
     .then(data => {
       setTesti(data);
-    })
+    });
+  const handleScroll = () => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      setShowLeftChevron(container.scrollLeft > 0);
+      setShowRightChevron(
+        container.scrollLeft + container.clientWidth < container.scrollWidth
+      );
+    }
+    };
+    if (scrollRef.current) {
+      scrollRef.current.addEventListener('scroll', handleScroll);
+    }
+    return () => {
+      if (scrollRef.current) {
+        scrollRef.current.removeEventListener('scroll', handleScroll);
+      }
+    };
   }, []);
 
 const renderStarRating = (rating) => {
@@ -44,19 +66,35 @@ const renderStarRating = (rating) => {
   return starIcons;
 };
 
-const handleClick = (anchor) => {
-  navigate(anchor);
+const {
+  showLeftChevron,
+  showRightChevron,
+  setShowLeftChevron,
+  setShowRightChevron
+} = useContext(AuthContext);
+
+const scrollToLeft = () => {
+  scrollRef.current.scrollBy({
+    left: -550,
+    behavior: "smooth",
+  });
+};
+
+const scrollToRight = () => {
+  scrollRef.current.scrollBy({
+    left: 550,
+    behavior: "smooth",
+  });
 };
 
 return (
   <Testipage>
     <h1
       id="Testimonials-page"
-      ref={scrollRef}
     >
       Testimonials
     </h1>
-    <Testifeeds>
+    <Testifeeds ref={scrollRef}>
       {testi.slice(0, 5).map((feedback, index) => (
         <Testicard key={index}>
           <TestiProfpicName>
@@ -91,6 +129,22 @@ return (
         </Testicard>
       ))}
     </Testifeeds>
+    <HStack display='flex' style={{width: '100%', justifyContent: 'center', marginBottom: '2rem'}}>
+      {showLeftChevron && (
+      <LeftChevronTesti onClick={scrollToLeft}>
+        <FontAwesomeIcon
+          icon={faChevronLeft}
+        />
+      </LeftChevronTesti>
+      )}
+      {showRightChevron && (
+      <RightChevronTesti onClick={scrollToRight}>
+        <FontAwesomeIcon
+          icon={faChevronRight}
+        />
+      </RightChevronTesti>
+      )}
+    </HStack>
   </Testipage>
   );
 }

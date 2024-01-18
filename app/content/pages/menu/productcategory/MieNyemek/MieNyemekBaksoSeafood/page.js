@@ -169,7 +169,7 @@ const MieNyemekBaksoSeafood = () => {
         </SizeAndOrder>
         <Topping>
           <SpicyText>Spicy Levels</SpicyText>
-          <SpicyImg src={`/images/Spicy_level.jpg`} alt='spicy level' width={100} height={100}/>
+          <SpicyImg src={`/images/Spicy_level.jpg`} alt='spicy level' width={500} height={500}/>
         </Topping>
       </ProductInfoOrder>
     </ProductDetail>
