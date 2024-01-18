@@ -7,21 +7,14 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
-  // rewrites: async () => ({
-  //   beforeFiles: [
-  //     {
-  //       source: '/(.*)',
-  //       destination: '/',
-  //     },
-  //   ],
-  // }),
-  // redirects: async () => [
-  //   {
-  //     source: '/about',
-  //     destination: '/content/pages/about',
-  //     permanent: true,
-  //   },
-  // ]
+  rewrites: async () => ({
+    beforeFiles: [
+      {
+        source: '/(.*)',
+        destination: '/',
+      },
+    ],
+  })
 }
 
 module.exports = nextConfig
