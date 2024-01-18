@@ -37,14 +37,22 @@ const nextConfig = {
   //   ];
   // },
 
-  rewrites: async () => ({
-    beforeFiles: [
-      {
-        source: '/(.*)',
-        destination: '/',
-      },
-    ],
-  }),
+  // rewrites: async () => ({
+  //   beforeFiles: [
+  //     {
+  //       source: '/(.*)',
+  //       destination: '/',
+  //     },
+  //   ],
+  // }),
+
+  redirects: async () => [
+    {
+      source: '/about',
+      destination: '/content/pages/about',
+      permanent: true,
+    },
+  ]
   // generateStaticParams: async function () {
   //   return {
   //     '/': { page: '/' },
