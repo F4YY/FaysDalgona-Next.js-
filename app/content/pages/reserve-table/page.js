@@ -40,41 +40,64 @@ const ReserveTable = (onSubmit) => {
       occasion:"Birthday",
       notes:"",
     },
-    onSubmit: (value) => {
-      axios.post('http://localhost:3001/Reservation_guest', value)
-      submit(value);
+    // onSubmit: (value) => {
+    //   axios.post('http://localhost:3001/Reservation_guest', value)
+    //   submit(value);
+    // },
+
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch('http://localhost:3001/Reservation_guest', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                // You can add any additional headers if needed
+            },
+            body: JSON.stringify(values),
+        });
+        if (!response.ok) {
+            // Handle error, e.g., show an error message
+            console.error(`HTTP error! Status: ${response.status}`);
+            return;
+        }
+        // If the request is successful, you can proceed with other actions
+        const responseData = await response.json();
+        submit(responseData); // assuming responseData is what you want to submit
+      } catch (error) {
+          console.error('Error during POST request:', error);
+      }
     },
     validationSchema: Yup.object({
-      Name: Yup.string("Name must not be empty").required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
+      Name: Yup.string("Name must not be empty").required("Please input your name"),
+      email: Yup.string().email("Invalid email address").required("Please input your email address"),
       notes: Yup.string()
       .min(10, "Must be 10 characters at minimum")
-      .required("Required"),
+      .required("Must be 10 characters at minimum"),
       time: Yup.string().required("Please select available time"),
       no_of_guests: Yup.string().required("Please select number of quests"),
       occasion: Yup.string().required("Please select occasion"),
     }),
   });
+
     useEffect(() => {
-        if (response) {
-            onOpen(response.type, response.message);
-            if(response.type === 'success'){
-                formik.resetForm();
-            }
-        }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [response]);
+      if (response && onOpen) {
+          onOpen(response.type, response.message);
+          if (response.type === 'success' && formik) {
+              formik.resetForm();
+          }
+      }
+  }, [response, onOpen, formik]);
 
   const [startDate, setStartDate] = useState(new Date());
   const sleep = ms => new Promise(r => setTimeout(r, ms))
   const handleSubmit = async values => {
     await sleep(500)
     onSubmit(values)
-    }
+  }
 
   return (
     <Box
-      backgroundColor="rgba(255, 165, 0, 0.5)"
+      backgroundColor="rgba(200, 165, 0, 0.5)"
       justifyContent="center"
       alignItems="flex-start"
       display="flex"
@@ -99,7 +122,7 @@ const ReserveTable = (onSubmit) => {
         <Heading as="h1" fontSize={{base: "25px", md: "30px", lg:"36px"}} pb={4}>
           Reserve a Table
         </Heading>
-        <Box p={4} rounded="xl" width={{base: "100%", md: "50%", lg:"50%"}} backgroundColor="rgba(255, 165, 0, 0.8)">
+        <Box p={4} rounded="xl" width={{base: "100%", md: "50%", lg:"50%"}} backgroundColor="rgba(255, 185, 200, 0.8)">
           <form onSubmit={formik.handleSubmit} display="flex">
             <VStack spacing={6}>
               <FormControl isInvalid={!!formik.errors.Name && formik.touched.Name}>
@@ -125,13 +148,16 @@ const ReserveTable = (onSubmit) => {
               </FormControl>
               <FormControl isInvalid={!!formik.errors.date && formik.touched.date}>
                 <FormLabel htmlFor="datepicker">Choose date</FormLabel>
-                <DatePicker
-                  type="date" id="res-date" name="date"
-                  selected={startDate}
-                  onChange={(date) => setStartDate(date)}
-                  minDate={new Date()}
-                  {...formik.getFieldProps("date")}
-                />
+                  <DatePicker
+                    type="date"
+                    id="res-date"
+                    name="date"
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    onSelect={(date) => setStartDate(date)} // Update this line
+                    minDate={new Date()}
+                    // {...formik.getFieldProps('date')}
+                  />
                 <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!formik.errors.time && formik.touched.time}>

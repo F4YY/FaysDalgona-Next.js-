@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import bgpattern from './images/bg-pattern-intro-desktop.svg';
 
 export const Container = styled.div`
   --orange: #FF7F00;
