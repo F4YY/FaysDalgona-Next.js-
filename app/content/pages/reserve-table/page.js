@@ -1,5 +1,5 @@
 'use client'
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useState} from "react";
 import { useFormik } from "formik";
 import {
   Alert,
@@ -12,96 +12,93 @@ import {
   FormErrorMessage,
   FormLabel,
   Heading,
-  Input,
   Select,
+  Spinner,
+  Text,
   Textarea,
   VStack,
 } from "@chakra-ui/react";
 import * as Yup from 'yup';
-import useSubmit from "../../../hook/useSubmit";
-import {useAlertContext} from "../../../context/alertContext";
-import axios from "axios";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AuthContext from "../../../context/authContext";
 
-const ReserveTable = (onSubmit) => {
-  const {isLoading, response, submit} = useSubmit();
-  const { onOpen } = useAlertContext();
+const ReserveTable = () => {
   const {user} = useContext(AuthContext);
+  const [startDate, setStartDate] = useState(new Date());
 
   const formik = useFormik({
     initialValues: {
-      Name: "",
-      email: "",
-      date: "",
-      time: "17:00",
-      no_of_guests: "1 - 2 persons",
-      occasion:"Birthday",
-      notes:"",
+      date: startDate.toISOString().split('T')[0],
+      time: "- select time -",
+      no_of_guests: "- select number of guests -",
+      occasion: "- select an occasion -",
+      notes: "",
     },
-    // onSubmit: (value) => {
-    //   axios.post('http://localhost:3001/Reservation_guest', value)
-    //   submit(value);
-    // },
-
     onSubmit: async (values) => {
       try {
-        const response = await fetch('http://localhost:3001/Reservation_guest', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                // You can add any additional headers if needed
-            },
-            body: JSON.stringify(values),
-        });
-        if (!response.ok) {
-            // Handle error, e.g., show an error message
-            console.error(`HTTP error! Status: ${response.status}`);
-            return;
+        // Fetch data first
+        const fetchDataResponse = await fetch('https://fays-dalgona.onrender.com/Reservation_guest');
+        if (!fetchDataResponse.ok) {
+          throw new Error(`Failed to fetch data. Status: ${fetchDataResponse.status}`);
         }
-        // If the request is successful, you can proceed with other actions
-        const responseData = await response.json();
-        submit(responseData); // assuming responseData is what you want to submit
+        const reservations = await fetchDataResponse.json();
+
+        // Process data and prepare payload for POST request
+        const lastId = reservations[reservations.length - 1].id;
+        const newId = Number(lastId) + 1;
+        const postReservationData = {
+          id: newId,
+          name: user?.user_metadata.full_name,
+          email: user?.email || "NA",
+          date: values.date, // Use the selected date from the form
+          time: values.time, // Use the selected time from the form
+          no_of_guests: values.no_of_guests,
+          occasion: values.occasion,
+          notes: values.notes,
+        };
+
+        // Perform POST request
+        const postResponse = await fetch("https://fays-dalgona.onrender.com/Reservation_guest", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(postReservationData),
+        });
+
+        if (postResponse.ok) {
+          // Reset Formik form after successful submission
+          setStartDate(new Date());
+          formik.resetForm();
+
+          // You can add other logic here after successful submission
+          // For example, show a success message using onOpen from useAlertContext
+          // onOpen('success', 'Reservation submitted successfully.');
+        } else {
+          alert("Error submitting reservation. Please try again.");
+        }
       } catch (error) {
-          console.error('Error during POST request:', error);
+        console.error("Error:", error);
+
+        // Handle error, and optionally show an error message using onOpen
+        // onOpen('error', 'An error occurred while submitting the reservation.');
       }
     },
     validationSchema: Yup.object({
-      Name: Yup.string("Name must not be empty").required("Please input your name"),
-      email: Yup.string().email("Invalid email address").required("Please input your email address"),
-      notes: Yup.string()
-      .min(10, "Must be 10 characters at minimum")
-      .required("Must be 10 characters at minimum"),
-      time: Yup.string().required("Please select available time"),
-      no_of_guests: Yup.string().required("Please select number of quests"),
-      occasion: Yup.string().required("Please select occasion"),
+      date: Yup.date().required("Please select a date"),
+      time: Yup.string().notOneOf(["- select time -"], "Please select a time").required("Please select a time"),
+      no_of_guests: Yup.string().notOneOf(["- select number of guests -"], "Please select the number of guests").required("Please select the number of guests"),
+      occasion: Yup.string().notOneOf(["- select an occasion -"], "Please select an occasion").required("Please select an occasion"),
+      notes: Yup.string().min(10, "Must be 10 characters at minimum").required("Must be 10 characters at minimum"),
     }),
   });
-
-    useEffect(() => {
-      if (response && onOpen) {
-          onOpen(response.type, response.message);
-          if (response.type === 'success' && formik) {
-              formik.resetForm();
-          }
-      }
-  }, [response, onOpen, formik]);
-
-  const [startDate, setStartDate] = useState(new Date());
-  const sleep = ms => new Promise(r => setTimeout(r, ms))
-  const handleSubmit = async values => {
-    await sleep(500)
-    onSubmit(values)
-  }
-
   return (
     <Box
       backgroundColor="rgba(200, 165, 0, 0.5)"
       justifyContent="center"
       alignItems="flex-start"
       display="flex"
-      onSubmit={handleSubmit}
       id="Reservation-page"
       w="100%"
     >
@@ -118,101 +115,138 @@ const ReserveTable = (onSubmit) => {
           <AlertDescription>Please login to reserve a table.</AlertDescription>
         </Alert>
       ) : (
-      <VStack w="1024px" p={10} zIndex={0}>
-        <Heading as="h1" fontSize={{base: "25px", md: "30px", lg:"36px"}} pb={4}>
+      <VStack w="1024px" p={2.5} zIndex={0}>
+        <Heading as="h1" fontSize={{base: "25px", md: "30px", lg:"36px"}} pb={4} color="orange.600">
           Reserve a Table
         </Heading>
-        <Box p={4} rounded="xl" width={{base: "100%", md: "50%", lg:"50%"}} backgroundColor="rgba(255, 185, 200, 0.8)">
+        <Box p={4} rounded="xl" width={{base: "100%", md: "50%", lg:"50%"}} backgroundColor="rgba(249, 233, 214, 0.8)">
           <form onSubmit={formik.handleSubmit} display="flex">
             <VStack spacing={6}>
-              <FormControl isInvalid={!!formik.errors.Name && formik.touched.Name}>
-              <FormLabel htmlFor="Name">Name</FormLabel>
-              <Input
-                id="Name"
-                name="Name"
-                {...formik.getFieldProps("Name")}
-                style={{ backgroundColor: "rgba(255, 255, 255, 0.7" }}
-              />
-                <FormErrorMessage>{formik.errors.Name}</FormErrorMessage>
-              </FormControl>
-              <FormControl isInvalid={!!formik.errors.email && formik.touched.email}>
-                <FormLabel htmlFor="email">Email Address</FormLabel>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  {...formik.getFieldProps("email")}
-                  style={{ backgroundColor: "rgba(255, 255, 255, 0.7" }}
-                />
-                <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
-              </FormControl>
               <FormControl isInvalid={!!formik.errors.date && formik.touched.date}>
                 <FormLabel htmlFor="datepicker">Choose date</FormLabel>
                   <DatePicker
                     type="date"
                     id="res-date"
                     name="date"
+                    showIcon
+                    toggleCalendarOnIconClick
                     selected={startDate}
-                    onChange={(date) => setStartDate(date)}
-                    onSelect={(date) => setStartDate(date)} // Update this line
+                    onChange={(date) => {
+                      setStartDate(date);
+                      const formattedDate = date.toISOString().split('T')[0];
+                      formik.setFieldValue('date', formattedDate);
+                    }}
                     minDate={new Date()}
-                    // {...formik.getFieldProps('date')}
+                    dateFormat="dd/MM/yyyy" // Set the desired date format
+                    disabled={formik.isSubmitting}
                   />
                 <FormErrorMessage>{formik.errors.date}</FormErrorMessage>
               </FormControl>
               <FormControl isInvalid={!!formik.errors.time && formik.touched.time}>
                 <FormLabel htmlFor="timepicker">Choose time</FormLabel>
-                  <Select id="res-time" name="time" style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}} {...formik.getFieldProps("time")} required>
-                    <option disabled>--select time--</option>
-                    <option>17:00</option>
-                    <option>17:30</option>
-                    <option>18:00</option>
-                    <option>18:30</option>
-                    <option>19:00</option>
-                    <option>19:30</option>
-                    <option>20:00</option>
-                  </Select>
-                  <FormErrorMessage>{formik.errors.time},</FormErrorMessage>
-                </FormControl>
+                <Select
+                  id="res-time"
+                  name="time"
+                  style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}}
+                  {...formik.getFieldProps("time")}
+                  required
+                  disabled={formik.isSubmitting}
+                >
+                  <option disabled>- select time -</option>
+                  <option>17:00</option>
+                  <option>17:30</option>
+                  <option>18:00</option>
+                  <option>18:30</option>
+                  <option>19:00</option>
+                  <option>19:30</option>
+                  <option>20:00</option>
+                </Select>
+                {formik.touched.time && (
+                  <Text mt={1} fontStyle="italic" color="red.500">
+                    {formik.errors.time}
+                  </Text>
+                )}
+              </FormControl>
               <FormControl isInvalid={!!formik.errors.no_of_guests && formik.touched.no_of_guests}>
                 <FormLabel htmlFor="guests">Number of guests</FormLabel>
-                  <Select id="guests" name="no_of_guests" style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}} {...formik.getFieldProps("no_of_guests")} required>
-                    <option disabled>--select no of guests--</option>
-                    <option>1 - 2 persons</option>
-                    <option>3 - 4 persons</option>
-                    <option>5 - 6 persons</option>
-                    <option>7 - 8 persons</option>
-                    <option>9 - 10 persons</option>
-                    <option>more than 11 persons</option>
-                    <FormErrorMessage>{formik.errors.no_of_guests}</FormErrorMessage>
-                  </Select>
+                <Select
+                  id="guests"
+                  name="no_of_guests"
+                  style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}}
+                  {...formik.getFieldProps("no_of_guests")}
+                  required
+                  disabled={formik.isSubmitting}
+                >
+                  <option disabled>- select number of guests -</option>
+                  <option>1 - 2 persons</option>
+                  <option>3 - 4 persons</option>
+                  <option>5 - 6 persons</option>
+                  <option>7 - 8 persons</option>
+                  <option>9 - 10 persons</option>
+                  <option>more than 11 persons</option>
+                </Select>
+                {formik.touched.no_of_guests && (
+                  <Text mt={1} fontStyle="italic" color="red.500">
+                    {formik.errors.no_of_guests}
+                  </Text>
+                )}
               </FormControl>
               <FormControl isInvalid={!!formik.errors.occasion && formik.touched.occasion}>
                 <FormLabel htmlFor="occasion">Occasion</FormLabel>
-                  <Select id="occasion" name="occasion" style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}} {...formik.getFieldProps("occasion")} required>
-                    <option disabled>--select occasion--</option>
-                    <option>Birthday</option>
-                    <option>Anniversary</option>
-                    <option>Engagement</option>
-                    <option>Family Gathering</option>
-                    <option>Corporate event</option>
-                    <option>Other</option>
-                    <FormErrorMessage>{formik.errors.occasion}</FormErrorMessage>
-                  </Select>
+                <Select
+                  id="occasion"
+                  name="occasion"
+                  style={{width:"100%", textAlign:"center", backgroundColor:"rgba(255, 255, 255, 0.7)"}}
+                  {...formik.getFieldProps("occasion")}
+                  required
+                  disabled={formik.isSubmitting}
+                >
+                  <option disabled>- select an occasion -</option>
+                  <option>Birthday</option>
+                  <option>Anniversary</option>
+                  <option>Engagement</option>
+                  <option>Family Gathering</option>
+                  <option>Corporate event</option>
+                  <option>Other</option>
+                </Select>
+                {formik.touched.occasion && (
+                  <Text mt={1} fontStyle="italic" color="red.500">
+                    {formik.errors.occasion}
+                  </Text>
+                )}
               </FormControl>
               <FormControl isInvalid={!!formik.errors.notes && formik.touched.notes}>
                 <FormLabel htmlFor="notes">Add notes</FormLabel>
                 <Textarea
                   id="notes"
                   name="notes"
+                  placeholder="Add any additional notes here..."
                   height={100}
                   {...formik.getFieldProps("notes")}
                   style={{ backgroundColor: "rgba(255, 255, 255, 0.7)" }}
+                  disabled={formik.isSubmitting}
                 />
-                <FormErrorMessage>{formik.errors.notes}</FormErrorMessage>
+                {formik.touched.notes && (
+                  <Text mt={1} fontStyle="italic" color="red.500">
+                    {formik.errors.notes}
+                  </Text>
+                )}
               </FormControl>
-              <Button type="submit" disabled={!(formik.isValid && formik.dirty)} colorScheme="orange" width="full" isLoading={isLoading} loadingText='Submitting'>
-                Submit
+              <Button
+                type="submit"
+                disabled={formik.isSubmitting}
+                colorScheme="orange"
+                isLoading={formik.isSubmitting}
+                loadingText="Submitting"
+                width="full"
+              >
+                {formik.isSubmitting ? (
+                  <>
+                    Submitting <Spinner size="sm" ml={2} />
+                  </>
+                ) : (
+                  "Submit"
+                )}
               </Button>
             </VStack>
           </form>
