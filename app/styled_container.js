@@ -39,7 +39,7 @@ export const Container = styled.div`
   background: url('/_next/static/media/bg-pattern-intro-desktop.a96b9a21.svg') center center no-repeat; */
 
   /* activate this when deploy to netlify: */
-  background: url('${bgpattern}') center center no-repeat;
+  background: url(${bgpattern}) center center no-repeat;
   background-size: cover 100%;
   @media (max-width: 640px) {
     background-size: cover;
