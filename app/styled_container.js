@@ -1,6 +1,6 @@
 import styled from "styled-components";
  //activate this when deployed on netlify:
-import bgpattern from "../public/images/bg-pattern-intro-desktop.svg";
+import bgpattern from "/public/images/bg-pattern-intro-desktop.svg";
 
 export const Container = styled.div`
   --orange: #FF7F00;
