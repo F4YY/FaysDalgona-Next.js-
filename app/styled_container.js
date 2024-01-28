@@ -1,4 +1,6 @@
 import styled from "styled-components";
+ //activate this when deployed on netlify:
+import bgpattern from "../public/images/bg-pattern-intro-desktop.svg";
 
 export const Container = styled.div`
   --orange: #FF7F00;
@@ -33,7 +35,11 @@ export const Container = styled.div`
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  background: url('/_next/static/media/bg-pattern-intro-desktop.a96b9a21.svg') center center no-repeat;
+  /* activate this when deploy to vercel:
+  background: url('/_next/static/media/bg-pattern-intro-desktop.a96b9a21.svg') center center no-repeat; */
+
+  /* activate this when deploy to netlify: */
+  background: url('${bgpattern}') center center no-repeat;
   background-size: cover 100%;
   @media (max-width: 640px) {
     background-size: cover;

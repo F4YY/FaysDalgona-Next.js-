@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
+  // activate this when deploy to netlify:
   rewrites: async () => ({
     beforeFiles: [
       {
