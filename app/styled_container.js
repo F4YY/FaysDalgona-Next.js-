@@ -35,9 +35,8 @@ export const Container = styled.div`
   min-height: 100vh;
   justify-content: center;
   align-items: center;
-  /* activate this when deploy to vercel: */
+  /* activate this when deploy to vercel and netlify: */
   background: url('/_next/static/media/bg-pattern-intro-desktop.a96b9a21.svg') center center no-repeat;
-
   /* activate this when deploy to netlify: */
   /* background: url(${bgpattern}) center center no-repeat; */
   background-size: cover 100%;

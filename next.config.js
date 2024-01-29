@@ -6,7 +6,7 @@ const nextConfig = {
   images: {
     domains: ['lh3.googleusercontent.com'],
   },
-  // activate this when deploy to netlify:
+  // activate this when deploy to netlify, inactivate when deploy to vercel:
   rewrites: async () => ({
     beforeFiles: [
       {

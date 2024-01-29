@@ -994,6 +994,7 @@ export const ErrorAlert = styled(Alert).attrs({
   justify-content: center;
   border-radius: 1rem;
   @media screen and (max-width: 991px) {
+    flex-direction: column;
     width: 60%;
     min-height: 40%;
   }
