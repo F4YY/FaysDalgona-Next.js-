@@ -29,7 +29,7 @@ import AuthContext from "../../../context/authContext";
 import { NotifAlert } from "../menu/styled_menu";
 import { MdCheck } from "react-icons/md";
 
-const ReserveTable = () => {
+const ReserveTable = ({data}) => {
   const {
     user,
     showNotif,
@@ -65,6 +65,30 @@ const ReserveTable = () => {
     return formattedDate;
   };
 
+  const userSelectedReservation = data.find(obj => obj.name === user?.user_metadata.full_name);
+  if (userSelectedReservation) {
+    const parsedDate = parseDate(userSelectedReservation.date);
+    console.log("Reservation Data:", {
+      selectedDate: userSelectedReservation.date,
+      isSelectedDate: today <= parseDate,
+      selectedTime: userSelectedReservation.time,
+      selectedNumberOfGuests: userSelectedReservation.no_of_guests,
+      selectedOccasion: userSelectedReservation.occasion,
+      selectedNotes: userSelectedReservation.notes,
+    });
+    setReservationData({
+      selectedDate: userSelectedReservation.date,
+      isSelectedDate: today <= parseDate,
+      selectedTime: userSelectedReservation.time,
+      selectedNumberOfGuests: userSelectedReservation.no_of_guests,
+      selectedOccasion: userSelectedReservation.occasion,
+      selectedNotes: userSelectedReservation.notes,
+    });
+    setShowTicket(true);
+  } else {
+    console.log("User not found or no reservation date available.");
+  }
+  
   React.useEffect(() => {
     if (showNotif) {
       const timer = setTimeout(() => {
@@ -72,36 +96,7 @@ const ReserveTable = () => {
       }, 3000);
       return () => clearTimeout(timer);
     }
-    fetch("https://fays-dalgona.onrender.com/Reservation_guest")
-    .then(response => response.json())
-    .then(data => {
-      const userSelectedReservation = data.find(obj => obj.name === user?.user_metadata.full_name && obj.email === user?.email);
-      if (userSelectedReservation) {
-        console.log("Reservation Data:", {
-          selectedDate: userSelectedReservation.date,
-          isSelectedDate: today <= parseDate(userSelectedReservation.date),
-          selectedTime: userSelectedReservation.time,
-          selectedNumberOfGuests: userSelectedReservation.no_of_guests,
-          selectedOccasion: userSelectedReservation.occasion,
-          selectedNotes: userSelectedReservation.notes,
-        });
-        setReservationData({
-          selectedDate: userSelectedReservation.date,
-          isSelectedDate: today <= parseDate,
-          selectedTime: userSelectedReservation.time,
-          selectedNumberOfGuests: userSelectedReservation.no_of_guests,
-          selectedOccasion: userSelectedReservation.occasion,
-          selectedNotes: userSelectedReservation.notes,
-        });
-        setShowTicket(true);
-      } else {
-        console.log("User not found or no reservation date available.");
-      }
-    })
-    .catch(error => {
-      console.error("Error fetching Testimonials:", error);
-    });
-  }, [showNotif, setShowNotif, user?.user_metadata.full_name]);
+  }, [showNotif, setShowNotif]);
 
   const formik = useFormik({
     initialValues: {
@@ -187,8 +182,8 @@ const ReserveTable = () => {
             Reserve a Table
           </Heading>
           <Box p={4} mb={8} rounded="xl" width={{base: "100%", md: "50%", lg:"50%"}} backgroundColor="rgba(252, 106, 53, .4)" boxShadow="2px 10px 15px rgba(0, 0, 0, 0.3)">
-          {!showTicket ? (
-            !isSelectedDate ? (
+          {!showTicket && !reservationData ?
+            (
               <form onSubmit={formik.handleSubmit} display="flex">
                 <VStack spacing={6}>
                   <FormControl isInvalid={!!formik.errors.date && formik.touched.date}>
@@ -320,7 +315,7 @@ const ReserveTable = () => {
                   </Button>
                 </VStack>
               </form>
-            ) : ( reservationData && (
+            ) : (
               <VStack width="100%">
                 <Heading as="h3" fontSize={{base: "15px", md: "19px", lg:"23px"}} pb={4} color="red.600" letterSpacing={1}>
                   Here's your reservation ticket:
@@ -371,7 +366,7 @@ const ReserveTable = () => {
                     <ListItem>
                       <HStack alignItems='flex-start'>
                         <ListIcon as={MdCheck} color="green.700" />
-                        <p>This ticket will automatically expire after the reservation date. You can reserve again after the expiration date.</p>
+                        <p>This ticket will automatically expire after the reservation date.</p>
                       </HStack>
                     </ListItem>
                   </List>
@@ -381,69 +376,68 @@ const ReserveTable = () => {
                 </Text>
               </VStack>
             )
-            )
-          ) : ( reservationData && (
-            <VStack width="100%">
-              <Heading as="h3" fontSize={{base: "15px", md: "19px", lg:"23px"}} pb={4} color="red.600" letterSpacing={1}>
-                Here's your reservation ticket:
-              </Heading>
-              <VStack alignItems="flex-start" fontSize={{base: "13px", md: "15px", lg:"16px"}} bgColor="gray.300" p={4} w="100%" letterSpacing={1}>
-                <Text>
-                  <b>Name</b>: {user?.user_metadata.full_name}
-                </Text>
-                <Text>
-                  <b>Email</b>: {user?.email}
-                </Text>
-                <Text>
-                  <b>Reservation Date</b>: {parseDate(reservationData.selectedDate)}
-                </Text>
-                <Text>
-                  <b>Reservation Time</b>: {reservationData.selectedTime}
-                </Text>
-                <Text>
-                  <b>Number of Guests</b>: {reservationData.selectedNumberOfGuests}
-                </Text>
-                <Text>
-                  <b>Occasion</b>: {reservationData.selectedOccasion}
-                </Text>
-                <Text>
-                  <b>Notes</b>: {reservationData.selectedNotes}
-                </Text>
-              </VStack>
-              <VStack fontSize={{base: "13px", md: "14px", lg:"15px"}} mt={4}>
-                <List spacing={1}>
-                  <ListItem>
-                    <HStack alignItems='flex-start'>
-                      <ListIcon as={MdCheck} color="green.700" />
-                      <p>Print this ticket and bring it with you to the restaurant.</p>
-                    </HStack>
-                  </ListItem>
-                  <ListItem>
-                    <HStack alignItems='flex-start'>
-                      <ListIcon as={MdCheck} color="green.700" />
-                      <p>Come at least 5 minutes before the reservation time.</p>
-                      </HStack>
-                  </ListItem>
-                  <ListItem>
-                    <HStack alignItems='flex-start'>
-                      <ListIcon as={MdCheck} color="green.700" />
-                      <p>You can only reserve one table at a time per user account.</p>
-                    </HStack>
-                  </ListItem>
-                  <ListItem>
-                    <HStack alignItems='flex-start'>
-                      <ListIcon as={MdCheck} color="green.700" />
-                      <p>This ticket will automatically expire after the reservation date. You can reserve again after the expiration date.</p>
-                    </HStack>
-                  </ListItem>
-                </List>
-              </VStack>
-              <Text fontSize={{base: "14px", md: "15px", lg:"16px"}} mt={4} color="red.800" letterSpacing={1}>
-                Thank you for your reservation!
-              </Text>
-            </VStack>
-          )
-          )}
+          // ) : (
+          //   <VStack width="100%">
+          //     <Heading as="h3" fontSize={{base: "15px", md: "19px", lg:"23px"}} pb={4} color="red.600" letterSpacing={1}>
+          //       Here's your reservation ticket:
+          //     </Heading>
+          //     <VStack alignItems="flex-start" fontSize={{base: "13px", md: "15px", lg:"16px"}} bgColor="gray.300" p={4} w="100%" letterSpacing={1}>
+          //       <Text>
+          //         <b>Name</b>: {user?.user_metadata.full_name}
+          //       </Text>
+          //       <Text>
+          //         <b>Email</b>: {user?.email}
+          //       </Text>
+          //       <Text>
+          //         <b>Reservation Date</b>: {parseDate(reservationData.selectedDate)}
+          //       </Text>
+          //       <Text>
+          //         <b>Reservation Time</b>: {reservationData.selectedTime}
+          //       </Text>
+          //       <Text>
+          //         <b>Number of Guests</b>: {reservationData.selectedNumberOfGuests}
+          //       </Text>
+          //       <Text>
+          //         <b>Occasion</b>: {reservationData.selectedOccasion}
+          //       </Text>
+          //       <Text>
+          //         <b>Notes</b>: {reservationData.selectedNotes}
+          //       </Text>
+          //     </VStack>
+          //     <VStack fontSize={{base: "13px", md: "14px", lg:"15px"}} mt={4}>
+          //       <List spacing={1}>
+          //         <ListItem>
+          //           <HStack alignItems='flex-start'>
+          //             <ListIcon as={MdCheck} color="green.700" />
+          //             <p>Print this ticket and bring it with you to the restaurant.</p>
+          //           </HStack>
+          //         </ListItem>
+          //         <ListItem>
+          //           <HStack alignItems='flex-start'>
+          //             <ListIcon as={MdCheck} color="green.700" />
+          //             <p>Come at least 5 minutes before the reservation time.</p>
+          //             </HStack>
+          //         </ListItem>
+          //         <ListItem>
+          //           <HStack alignItems='flex-start'>
+          //             <ListIcon as={MdCheck} color="green.700" />
+          //             <p>You can only reserve one table at a time per user account.</p>
+          //           </HStack>
+          //         </ListItem>
+          //         <ListItem>
+          //           <HStack alignItems='flex-start'>
+          //             <ListIcon as={MdCheck} color="green.700" />
+          //             <p>This ticket will automatically expire after the reservation date.</p>
+          //           </HStack>
+          //         </ListItem>
+          //       </List>
+          //     </VStack>
+          //     <Text fontSize={{base: "14px", md: "15px", lg:"16px"}} mt={4} color="red.800" letterSpacing={1}>
+          //       Thank you for your reservation!
+          //     </Text>
+          //   </VStack>
+          // )
+          }
           </Box>
         </VStack>
       )
@@ -454,7 +448,7 @@ const ReserveTable = () => {
             <AlertIcon />
             <AlertTitle>Thank you!</AlertTitle>
           </HStack>
-          <AlertDescription textAlign="center">You've reserved a table and your reservation ticket has been issued.</AlertDescription>
+          <AlertDescription>You've reserved a table and your reservation ticket has been issued.</AlertDescription>
         </NotifAlert>
       )}
     </Box>

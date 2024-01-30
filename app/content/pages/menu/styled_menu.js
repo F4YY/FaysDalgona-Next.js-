@@ -985,13 +985,14 @@ export const ErrorAlert = styled(Alert).attrs({
   width: "",
 })`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   width: 40%;
   min-height: 40%;
   transform: translate(-50%, -50%);
   justify-content: center;
+  align-items: center;
   border-radius: 1rem;
   @media screen and (max-width: 991px) {
     flex-direction: column;
