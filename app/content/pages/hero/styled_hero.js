@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const StyledHeroSection = styled.div`
   display: flex;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   background-color: rgba(245, 245, 245, .8);
 `
 export const StyledFeatures = styled.div`
@@ -75,6 +75,9 @@ export const FDimage = styled(Image)`
   border-radius: 20px;
   aspect-ratio: 1/1;
   box-shadow: -5px 5px 3px rgba(128, 128, 128, 0.4);
+  @media (max-width: 1025px) {
+    top: 10%;
+  }
   @media (max-width: 640px) {
     position: inherit;
     width: 100%;

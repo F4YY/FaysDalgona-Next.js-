@@ -6,7 +6,7 @@ export const HighlightContainer = styled.div`
   flex-wrap: wrap;
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: auto;
   background-color:rgba(255, 204, 144, 0.5);
 `;
 
@@ -15,9 +15,9 @@ export const ThisWeekandOrder = styled.div`
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin: 6rem 5rem 2rem;
-  @media (max-width: 991px) {
-    margin: 20px 40px;
+  margin: 4rem 4rem 2rem;
+  @media (max-width: 1025px) {
+    margin: 3rem 3rem 1rem;
   }
   @media (max-width: 640px) {
     flex-direction: column;
@@ -59,7 +59,7 @@ export const MenuWrapper = styled.div`
 export const SpecialMenu = styled.div`
   display: flex;
   flex-direction: row;
-  min-height: 90vh;
+  min-height: auto;
   justify-content: space-around;
   align-items: flex-start;
   overflow: scroll;
@@ -114,8 +114,9 @@ export const LeftChevron = styled.div`
     transform: scale(1.2);
     transition: transform 0.3s ease;
   }
-  @media (max-width: 991px) {
+  @media (max-width: 1025px) {
     display: flex;
+    margin: 1rem 0 0 0;
   }
   @media (max-width: 640px) {
     display: none;
