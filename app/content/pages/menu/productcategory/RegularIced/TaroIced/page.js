@@ -1,5 +1,7 @@
 'use client'
 import React from 'react';
+import { db } from '../../../../../../firebase.config';
+import { collection, query, getDocs } from "firebase/firestore";
 import menudata from "../../../../../../database/menu.json";
 import {
   AlertCloseButton,
@@ -91,9 +93,11 @@ const TaroIced = () => {
       }, 3000);
       return () => clearTimeout(timer);
     }
-    fetch("https://fays-dalgona.onrender.com/Testimonials")
-    .then(response => response.json())
-    .then(data => {
+    async function getDataFromFirestore() {
+      const testimonialsCollection = collection(db, 'testimonials');
+      const q = query(testimonialsCollection);
+      const querySnapshot = await getDocs(q);
+      const data = querySnapshot.docs.map(doc => doc.data());
       const matchingObject = data.find(obj => obj.name === user?.user_metadata.full_name && obj.menu_name === "Taro Iced");
       if (matchingObject) {
         setIsClickable(false);
@@ -101,8 +105,8 @@ const TaroIced = () => {
       } else {
         setIsClickable(true);
       }
-    })
-    .catch(error => {
+    }
+    getDataFromFirestore().catch(error => {
       console.error("Error fetching Testimonials:", error);
     });
   }, [showNotif, setShowNotif, user?.user_metadata.full_name]);

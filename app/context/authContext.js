@@ -102,11 +102,9 @@ export const AuthContextProvider = ({ children }) => {
         menu_name: menuName,
         star_rating: currentRating,
         review: feedbackValue,
-        timestamp: timestamp,
+        timestamp: timestamp
       });
-
       console.log("Document written with ID: ", docRef.id);
-
       setIsSubmitting(false);
       setShowNotif(true);
       setRateMenu(false);
