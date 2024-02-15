@@ -1,6 +1,6 @@
 'use client'
 import { db } from "../../../firebase.config";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 import React, {useContext, useState} from "react";
 import { useFormik } from "formik";
 import {
@@ -41,22 +41,9 @@ const ReserveTable = () => {
   const [startDate, setStartDate] = useState(new Date());
   const [showTicket, setShowTicket] = useState(false);
   const [reservationData, setReservationData] = useState({}); // Add state to hold reservation data
-  const today = new Date();
-  let isSelectedDate;
 
   const parseDate = (dateString) => {
-    // Check if dateString is not null or undefined
-    if (!dateString) {
-      return null;
-    }
-    // Create a new Date object and parse the dateString
     const dateObject = new Date(dateString);
-    // Check if the dateObject is valid
-    if (isNaN(dateObject.getTime())) {
-      // If the dateObject is not valid, return null
-      return null;
-    }
-    // Format the date as desired
     const formattedDate = dateObject.toLocaleDateString('en-GB', {
       year: 'numeric',
       month: '2-digit',

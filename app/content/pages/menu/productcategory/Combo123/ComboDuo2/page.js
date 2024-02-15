@@ -52,31 +52,34 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { AlertDescription, AlertIcon, AlertTitle, HStack } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useContext } from 'react';
+import AuthContext from '../../../../../../context/authContext';
 
-const ComboDuo2 = ({
-  stars,
-  rateMenu,
-  setRateMenu,
-  currentRating,
-  setCurrentRating,
-  hoverRating,
-  setHoverRating,
-  authReady,
-  scrollToTopPage,
-  handleRateMenu,
-  handleSubmit,
-  showAlert,
-  showNotif,
-  setShowNotif,
-  setShowAlert,
-  isSubmitting,
-  feedbackValue,
-  setFeedbackValue,
-  setMenuPic,
-  setMenuCategory,
-  setMenuName,
-  user
-}) => {
+const ComboDuo2 = () => {
+  const {
+    stars,
+    rateMenu,
+    setRateMenu,
+    currentRating,
+    setCurrentRating,
+    hoverRating,
+    setHoverRating,
+    authReady,
+    scrollToTopPage,
+    handleRateMenu,
+    handleSubmit,
+    showAlert,
+    showNotif,
+    setShowNotif,
+    setShowAlert,
+    isSubmitting,
+    feedbackValue,
+    setFeedbackValue,
+    setMenuPic,
+    setMenuCategory,
+    setMenuName,
+    user,
+  } = useContext(AuthContext);
 
   const [isClickable, setIsClickable] = React.useState(true);
   const [feedbackTouched, setFeedbackTouched] = React.useState(false);

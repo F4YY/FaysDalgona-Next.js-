@@ -1,5 +1,7 @@
 import { createContext, useEffect, useRef, useState } from "react";
 import netlifyIdentity from "netlify-identity-widget";
+import { db } from "../firebase.config";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
 
 const AuthContext = createContext({
   user: null,
@@ -85,54 +87,89 @@ export const AuthContextProvider = ({ children }) => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    fetch("https://fays-dalgona.onrender.com/Testimonials")
-      .then(response => response.json())
-      .then(testimonials => {
-        const lastId = testimonials[testimonials.length - 1].id;
-        const newId = lastId + 1;
-        const postData = {
-          id: newId,
-          name: user?.user_metadata.full_name,
-          prof_pic: user?.user_metadata.avatar_url || "avatar.jpg",
-          email: user?.email || "NA",
-          menu_pic: menuPic,
-          menu_category: menuCategory,
-          menu_name: menuName,
-          star_rating: currentRating,
-          review: feedbackValue
-        };
-        return fetch("https://fays-dalgona.onrender.com/Testimonials", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(postData)
-        });
-      })
-      .then(postResponse => {
-        if (postResponse.ok) {
-          setIsSubmitting(false);
-          setShowNotif(true);
-          setRateMenu(false);
-          setFeedbackValue("");
-          setCurrentRating(0);
-        } else {
-          alert("Error submitting feedback. Please try again.");
-          setIsSubmitting(false);
-          setRateMenu(false);
-          setFeedbackValue("");
-          setCurrentRating(0);
-        }
-        return postResponse.json();
-      })
-      .catch(error => {
-        console.error("Error:", error);
-        alert("Error submitting feedback. Please try again.");
+
+    try {
+      const timestamp = Timestamp.now();
+      const docRef = await addDoc(collection(db, "testimonials"), {
+        name: user?.user_metadata.full_name,
+        prof_pic: user?.user_metadata.avatar_url || "avatar.jpg",
+        email: user?.email || "NA",
+        menu_pic: menuPic,
+        menu_category: menuCategory,
+        menu_name: menuName,
+        star_rating: currentRating,
+        review: feedbackValue,
+        timestamp: timestamp,
       });
+
+      console.log("Document written with ID: ", docRef.id);
+
+      setIsSubmitting(false);
+      setShowNotif(true);
+      setRateMenu(false);
+      setFeedbackValue("");
+      setCurrentRating(0);
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Error submitting feedback. Please try again.");
+      setIsSubmitting(false);
+      setRateMenu(false);
+      setFeedbackValue("");
+      setCurrentRating(0);
+    }
   };
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   fetch("https://fays-dalgona.onrender.com/Testimonials")
+  //     .then(response => response.json())
+  //     .then(testimonials => {
+  //       const lastId = testimonials[testimonials.length - 1].id;
+  //       const newId = lastId + 1;
+  //       const postData = {
+  //         id: newId,
+  //         name: user?.user_metadata.full_name,
+  //         prof_pic: user?.user_metadata.avatar_url || "avatar.jpg",
+  //         email: user?.email || "NA",
+  //         menu_pic: menuPic,
+  //         menu_category: menuCategory,
+  //         menu_name: menuName,
+  //         star_rating: currentRating,
+  //         review: feedbackValue
+  //       };
+  //       return fetch("https://fays-dalgona.onrender.com/Testimonials", {
+  //         method: "POST",
+  //         headers: {
+  //           "Content-Type": "application/json"
+  //         },
+  //         body: JSON.stringify(postData)
+  //       });
+  //     })
+  //     .then(postResponse => {
+  //       if (postResponse.ok) {
+  //         setIsSubmitting(false);
+  //         setShowNotif(true);
+  //         setRateMenu(false);
+  //         setFeedbackValue("");
+  //         setCurrentRating(0);
+  //       } else {
+  //         alert("Error submitting feedback. Please try again.");
+  //         setIsSubmitting(false);
+  //         setRateMenu(false);
+  //         setFeedbackValue("");
+  //         setCurrentRating(0);
+  //       }
+  //       return postResponse.json();
+  //     })
+  //     .catch(error => {
+  //       console.error("Error:", error);
+  //       alert("Error submitting feedback. Please try again.");
+  //     });
+  // };
 
   const scrollToTopHomePage = () => {
     const page = document.getElementById("Home-page");
