@@ -7,13 +7,13 @@ async function getData() {
   const testimonialsCollection = collection(db, 'testimonials');
   const q = query(
     testimonialsCollection,
-    where('star_rating', '>=', 4),
-    orderBy('star_rating', 'desc'),
-    orderBy('timestamp', 'desc'), // Sort by timestamp in descending order
+    orderBy('timestamp', 'desc')
   );
   const querySnapshot = await getDocs(q);
   const data = querySnapshot.docs.map(doc => doc.data());
-  return data;
+  // Filter data where star_rating is greater than or equal to 4
+  const filteredData = data.filter(item => item.star_rating >= 4);
+  return filteredData;
 }
 
 // async function getData() {
